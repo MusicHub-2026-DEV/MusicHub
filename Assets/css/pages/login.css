@@ -1,0 +1,262 @@
+.login {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.fundo {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.bola {
+    position: absolute;
+    border-radius: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 150px;
+    max-height: 150px;
+
+    filter: blur(80px)
+}
+
+.b1 {
+    background-color: var(--roxo-primario);
+
+    box-shadow: 0 12px 32px 0 #7128cc94;
+
+    top: 10%;
+    left: 30%;
+}
+
+.b2 {
+    background-color: var(--roxo-hover);
+
+    top: 80%;
+    left: 5%;
+}
+
+.b3 {
+    background-color: var(--roxo-escuro);
+
+    top: 55%;
+    left: 85%;
+}
+
+.login-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    backdrop-filter: blur(40px);
+    overflow: hidden;
+}
+
+.login-form {
+    padding: 48px;
+    background-color: hsla(0, 0%, 9%, 20%);
+}
+
+.login-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    width: 36px;
+}
+
+.login-marca b {
+    color: var(--roxo-hover);
+}
+
+.login-form h1 {
+    font-size: 34px;
+}
+
+.login-sub {
+    color: var(--texto-suave);
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.campo input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    color: var(--texto);
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--roxo-primario);
+}
+
+.login-opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.lembrar input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--roxo-primario);
+    border-radius: 20px;
+}
+
+.login-opcoes a {
+    color: var(--roxo-hover);
+}
+
+.login-opcoes a:hover {
+    text-decoration: underline;
+}
+
+.login-form .btn {
+    margin-bottom: 12px;
+}
+
+.login-info {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+    border-left: 1px solid var(--borda);
+    background-color: hsla(0, 0%, 9%, 80%);
+}
+
+.login-info h2 {
+    font-size: clamp(32px, 3.5vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.login-info>p {
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+.login-minis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.mini {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.mini-capa {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background-color: var(--superficie-clara);
+    margin-bottom: 12px;
+}
+
+.mini strong {
+    display: block;
+    font-size: 14px;
+}
+
+.mini span {
+    font-size: 13px;
+    color: var(--texto-fraco);
+}
+
+@media (max-width: 900px) {
+    .login-info {
+        display: none;
+    }
+
+    .login-card {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .login-form {
+        padding: 32px 24px;
+    }
+
+    .login-card[data-mode="registro"] .login-form {
+        transform: none;
+    }
+}
+
+.login-form,
+.login-info {
+    transition: transform .5s ease;
+}
+
+.login-card[data-modo="registro"] .login-form {
+    transform: translateX(100%);
+}
+
+.login-card[data-modo="registro"] .login-info {
+    transform: translateX(-100%);
+}
+
+.login-card[data-modo="login"] .form-registro {
+    display: none;
+}
+
+.login-card[data-modo="registro"] .form-login {
+    display: none;
+}
+
+.login-card[data-modo="login"] [data-quando="registro"] {
+    display: none;
+}
+
+.login-card[data-modo="registro"] [data-quando="login"] {
+    display: none;
+}
+
+.form-registro .campo-senhas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}

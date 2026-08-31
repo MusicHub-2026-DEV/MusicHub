@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../Fonts/montserrat-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../Fonts/montserrat-medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../Fonts/montserrat-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../Fonts/montserrat-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+
+    --roxo-primario: #7128CC;
+    --roxo-hover: #8B4EE0;
+    --roxo-escuro: #591994;
+
+    --fundo: #0F0F0F;
+    --superficie: #1A1A1A;
+    --superficie-clara: #262626;
+    --borda: rgba(255, 255, 255, 0.08);
+
+    --texto: #F5F5F5;
+    --texto-suave: #D3D3D3;
+    --texto-fraco: #8A8A8A;
+
+    --fonte: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--fundo);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: var(--fonte);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+p,
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+h1 { font-size: clamp(32px, 6vw, 48px); }
+h2 { font-size: clamp(28px, 4vw, 36px); }
+h3 { font-size: 28px; }
+h4 { font-size: 22px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+p {
+    line-height: 1.65;
+}
+
+::placeholder {
+    color: var(--texto-fraco);
+    opacity: 1;
+}
+
+::selection {
+    background-color: var(--roxo-primario);
+    color: #FFF;
+}
+
+:focus-visible {
+    outline: 2px solid var(--roxo-hover);
+    outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--superficie-clara);
+    border-radius: 999px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.secao {
+    padding: 64px 0;
+}
+
+.titulo-secao {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.grid-capas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px;
+}

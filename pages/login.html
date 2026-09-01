@@ -15,9 +15,11 @@
     <main class="login">
 
         <div class="fundo">
-            <span class="bola b1"></span>
-            <span class="bola b2"></span>
-            <span class="bola b3"></span>
+            <div class="fundo-animation">
+                <span class="bola b1"></span>
+                <span class="bola b2"></span>
+                <span class="bola b3"></span>
+            </div>
         </div>
 
         <div class="login-card" data-modo="login">
@@ -28,80 +30,81 @@
                     <span>MUSIC HUB<b>.</b></span>
                 </a>
 
-                <div class="form-login">
-                    <h1>Bem-vindo de volta</h1>
-                    <p class="login-sub">Entre para continuar ouvindo suas playlists e descobertas</p>
+                <div class="forms">
+                    <div class="form-login">
+                        <h1>Bem-vindo de volta</h1>
+                        <p class="login-sub">Entre para continuar ouvindo suas playlists e descobertas</p>
 
-                    <form>
-                        <div class="campo">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" placeholder="seu@email.com">
-                        </div>
+                        <form>
+                            <div class="campo">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" placeholder="seu@email.com">
+                            </div>
 
-                        <div class="campo">
-                            <label for="senha">Senha</label>
-                            <input type="password" id="senha" placeholder="••••••••">
-                        </div>
-
-                        <div class="login-opcoes">
-                            <label class="lembrar">
-                                <input type="checkbox">
-                                Lembrar de mim
-                            </label>
-                            <a href="#">Esqueci minha senha</a>
-                        </div>
-
-                        <button type="submit" class="btn btn-primario">Entrar</button>
-                    </form>
-
-                    <button type="button" data-troca="registro" class="btn btn-secundario">Criar conta</button>
-                </div>
-
-                <div class="form-registro">
-                    <h1>Crie sua conta</h1>
-                    <p class="login-sub">Comece a montar sua biblioteca em poucos minutos.</p>
-
-                    <form>
-                        <div class="campo">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" placeholder="Seu nome">
-                        </div>
-
-                        <div class="campo">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" placeholder="seu@email.com">
-                        </div>
-
-                        <div class="campo-senhas">
                             <div class="campo">
                                 <label for="senha">Senha</label>
                                 <input type="password" id="senha" placeholder="••••••••">
                             </div>
 
-                            <div class="campo">
-                                <label for="confirmar">Confirmar senha</label>
-                                <input type="password" id="confirmar" placeholder="••••••••">
+                            <div class="login-opcoes">
+                                <label class="lembrar">
+                                    <input type="checkbox">
+                                    Lembrar de mim
+                                </label>
+                                <a href="#">Esqueci minha senha</a>
                             </div>
-                        </div>
 
-                        <div class="login-opcoes">
-                            <label class="lembrar">
-                                <input type="checkbox">
-                                Aceito os Termos de Uso e a Política de Privacidade
-                            </label>
-                        </div>
+                            <button type="submit" class="btn btn-primario">Entrar</button>
+                        </form>
 
-                        <button type="submit" class="btn btn-primario">Criar sua conta</button>
-                    </form>
+                        <button type="button" data-troca="registro" class="btn btn-secundario">Criar conta</button>
+                    </div>
 
-                    <button type="button" data-troca="login" class="btn btn-secundario">Já tem conta? Entrar</button>
+                    <div class="form-registro">
+                        <h1>Crie sua conta</h1>
+                        <p class="login-sub">Comece a montar sua biblioteca em poucos minutos.</p>
+
+                        <form>
+                            <div class="campo">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" placeholder="Seu nome">
+                            </div>
+
+                            <div class="campo">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" placeholder="seu@email.com">
+                            </div>
+
+                            <div class="campo-senhas">
+                                <div class="campo">
+                                    <label for="senha">Senha</label>
+                                    <input type="password" id="senha" placeholder="••••••••">
+                                </div>
+
+                                <div class="campo">
+                                    <label for="confirmar">Confirmar senha</label>
+                                    <input type="password" id="confirmar" placeholder="••••••••">
+                                </div>
+                            </div>
+
+                            <div class="login-opcoes">
+                                <label class="lembrar">
+                                    <input type="checkbox">
+                                    Aceito os Termos de Uso e a Política de Privacidade
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primario">Criar sua conta</button>
+                        </form>
+
+                        <button type="button" data-troca="login" class="btn btn-secundario">Já tem conta?
+                            Entrar</button>
+                    </div>
                 </div>
-
-
 
             </div>
 
-            <div class="login-info">
+            <div class="form-info">
 
                 <h2 data-quando="login">Sua música, organizada do seu jeito.</h2>
                 <h2 data-quando="registro">Toda a sua música em um só lugar.</h2>

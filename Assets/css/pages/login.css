@@ -17,7 +17,7 @@
     width: 100%;
     height: 100%;
 
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 1700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bola {
@@ -27,7 +27,7 @@
     filter: blur(80px);
 
     will-change: transform, scale;
-    animation: 
+    animation:
         mover infinite alternate ease-in-out,
         tamanho infinite alternate ease-in-out;
 }
@@ -51,7 +51,9 @@
     width: 150px;
     height: 150px;
 
-    --x:  -30vw;  --y: 27vh;  --s: 1.6;
+    --x: -30vw;
+    --y: 27vh;
+    --s: 1.6;
     animation-duration: 6s;
 }
 
@@ -62,7 +64,9 @@
     width: 190px;
     height: 190px;
 
-    --x: 18vw;  --y: 20vh;  --s: 1.4;
+    --x: 18vw;
+    --y: 20vh;
+    --s: 1.4;
     animation-duration: 8s;
 }
 
@@ -73,14 +77,15 @@
     width: 220px;
     height: 220px;
 
-    --x: -20vw;  --y:  -25vh;  --s: 1.8;
+    --x: -20vw;
+    --y: -25vh;
+    --s: 1.8;
     animation-duration: 12s;
 }
 
-.login-card {
+.form-card {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 80vh;
     max-width: 1200px;
@@ -88,11 +93,6 @@
     border-radius: 16px;
     backdrop-filter: blur(40px);
     overflow: hidden;
-}
-
-.login-form {
-    padding: 48px;
-    background-color: hsla(0, 0%, 9%, 20%);
 }
 
 .login-marca {
@@ -112,7 +112,7 @@
     color: var(--roxo-hover);
 }
 
-.login-form h1 {
+.forms h1 {
     font-size: 2.2em;
 }
 
@@ -178,31 +178,19 @@
     text-decoration: underline;
 }
 
-.login-form .btn {
-    margin-bottom: 12px;
-}
-
-.form-info {
+.forms {
     position: relative;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    z-index: 1;
+    width: 50%;
     padding: 48px;
-    border-left: 1px solid var(--borda);
-    background-color: hsla(0, 0%, 9%, 80%);
+    background-color: hsl(0, 0%, 9%);
+
+    transition: transform 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    ;
 }
 
-.form-info h2 {
-    font-size: 2em;
-    line-height: 1.1;
-    margin-bottom: 16px;
-}
-
-.form-info>p {
-    color: var(--texto-suave);
-    font-size: 1em;
+.forms .btn {
+    margin-bottom: 12px;
 }
 
 .login-minis {
@@ -237,22 +225,45 @@
 }
 
 @media (max-width: 900px) {
-    .form-info {
-        display: none;
-    }
-
-    .login-card {
+    .form-card {
         grid-template-columns: 1fr;
         max-width: 500px;
     }
 
-    .login-form {
+    .painel {
+        display: none;
+    }
+
+    .forms {
         padding: 32px 24px;
     }
 
-    .login-card[data-mode="registro"] .login-form {
+    .form-card[data-mode="registro"] .forms {
         transform: none;
     }
+}
+
+.forms {
+    transition:
+        transform 500ms cubic-bezier(0.68,-0.55,0.27,1.55);
+}
+
+.form-conteudo {
+    transition:
+        transform 500ms cubic-bezier(0.55, 0.08, 0.68, 0.53);
+}
+
+.form-conteudo.saindo {
+    transform: translateY(120vh);
+}
+
+.form-conteudo.entrando {
+    transition:
+        transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-registro {
+    display: none;
 }
 
 .form-registro .campo-senhas {
@@ -261,57 +272,109 @@
     gap: 15px;
 }
 
-.login-card[data-modo="registro"] .login-form {
+.form-card[data-modo="registro"] .forms {
     transform: translateX(100%);
 }
 
-.login-card[data-modo="registro"] .form-info {
-    transform: translateX(-100%);
+.form-card[data-modo="login"] .forms {
+    transform: translateX(0);
 }
 
-.login-card[data-modo="login"] .form-registro {
-    display: none;
-}
-
-.login-card[data-modo="registro"] .form-login {
-    display: none;
-}
-
-.login-card[data-modo="login"] [data-quando="registro"] {
-    display: none;
-}
-
-.login-card[data-modo="registro"] [data-quando="login"] {
-    display: none;
-}
-
-.login:has(.login-card[data-modo="registro"]) .fundo-animation {
-    transform: rotate(180deg);
-}
-
-.login:has(.login-card[data-modo="login"]) .fundo-animation {
+.login[data-fundo="login"] .fundo-animation {
     transform: rotate(0deg);
 }
 
-.login-card {
-    view-transition-name: card;
+.login[data-fundo="registro"] .fundo-animation {
+    transform: rotate(180deg);
+}
+/* ---------- Painel (metade vazia do card) ---------- */
+
+.painel {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.login-form {
-    view-transition-name: form;
+.painel-login,
+.painel-registro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-info {
-    view-transition-name: info;
+/* cada painel fica escondido fora do card, pela sua borda */
+.painel-login {
+    right: 0;
+    transform: translateX(100%);
 }
 
-::view-transition-group(card),
-::view-transition-group(form),
-::view-transition-group(info),
-::view-transition-old(form),
-::view-transition-old(info),
-::view-transition-new(form),
-::view-transition-new(info) {
-    animation-duration: 600ms;
-    animation-timing-function: cubic-bezier(04, 0, 0.2, 1);
+.painel-registro {
+    left: 0;
+    transform: translateX(-100%);
 }
+
+/* entra só o painel do modo atual, e só depois que o form-card terminou de trocar de lado */
+.form-card[data-modo="login"]:not(.trocando) .painel-login,
+.form-card[data-modo="registro"]:not(.trocando) .painel-registro {
+    transform: translateX(0);
+}
+
+.painel-texto {
+    position: relative;
+    max-width: 440px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+.painel-texto h2 {
+    font-size: clamp(28px, 3.2vw, 44px);
+    margin-bottom: 16px;
+}
+
+.painel-texto p {
+    color: var(--texto-suave);
+}
+
+/* ---------- Ondas ---------- */
+
+.painel-ondas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    filter:
+        drop-shadow(0 0 10px rgba(139, 78, 224, 0.55))
+        drop-shadow(0 0 32px rgba(113, 40, 204, 0.45));
+}
+
+/* no login a base da onda fica na borda direita */
+.painel-login .painel-ondas {
+    transform: scaleX(-1);
+}
+
+.onda {
+    transform-box: fill-box;
+    transform-origin: 0 0;
+    animation: pulsar ease-in-out infinite alternate;
+}
+
+@keyframes pulsar {
+    from { transform: scaleX(0.78); }
+    to   { transform: scaleX(1.32); }
+}
+
+/* da maior e mais escura para a menor e mais clara */
+.onda:nth-child(1) { fill: var(--roxo-escuro);   fill-opacity: 0.35; animation-duration: 2.6s; }
+.onda:nth-child(2) { fill: var(--roxo-primario); fill-opacity: 0.35; animation-duration: 2.1s; animation-delay: -0.7s; }
+.onda:nth-child(3) { fill: var(--roxo-hover);    fill-opacity: 0.35; animation-duration: 1.7s; animation-delay: -1.4s; }
+.onda:nth-child(4) { fill: #A97AE8;              fill-opacity: 0.35; animation-duration: 2.3s; animation-delay: -2.1s; }
+.onda:nth-child(5) { fill: #CDB0F4;              fill-opacity: 0.4;  animation-duration: 1.4s; animation-delay: -2.8s; }

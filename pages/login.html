@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../Assets/css/base.css">
     <link rel="stylesheet" href="../Assets/css/components.css">
     <link rel="stylesheet" href="../Assets/css/pages/login.css">
+    <link rel="shortcut icon" href="../Assets/Images/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -22,15 +23,45 @@
             </div>
         </div>
 
-        <div class="login-card" data-modo="login">
+        <div class="form-card" data-modo="login">
 
-            <div class="login-form">
-                <a href="../index.html" class="login-marca">
-                    <img src="../Assets/Images/logo.png" alt="" class="login-logo">
-                    <span>MUSIC HUB<b>.</b></span>
-                </a>
+            <div class="painel" aria-hidden="true">
 
-                <div class="forms">
+                <svg width="0" height="0">
+                    <symbol id="ondas" viewBox="0 0 700 600" preserveAspectRatio="none">
+                        <path class="onda" d="M369 0L364.7 14.3C360.3 28.7 351.7 57.3 345.8 85.8C340 114.3 337 142.7 324.5 171.2C312 199.7 290 228.3 276.7 257C263.3 285.7 258.7 314.3 257.3 343C256 371.7 258 400.3 262.8 428.8C267.7 457.3 275.3 485.7 271 514.2C266.7 542.7 250.3 571.3 242.2 585.7L234 600L0 600L0 585.7C0 571.3 0 542.7 0 514.2C0 485.7 0 457.3 0 428.8C0 400.3 0 371.7 0 343C0 314.3 0 285.7 0 257C0 228.3 0 199.7 0 171.2C0 142.7 0 114.3 0 85.8C0 57.3 0 28.7 0 14.3L0 0Z"/>
+                        <path class="onda" d="M189 0L204.8 14.3C220.7 28.7 252.3 57.3 269.7 85.8C287 114.3 290 142.7 287.7 171.2C285.3 199.7 277.7 228.3 267.3 257C257 285.7 244 314.3 237.5 343C231 371.7 231 400.3 224.3 428.8C217.7 457.3 204.3 485.7 204.2 514.2C204 542.7 217 571.3 223.5 585.7L230 600L0 600L0 585.7C0 571.3 0 542.7 0 514.2C0 485.7 0 457.3 0 428.8C0 400.3 0 371.7 0 343C0 314.3 0 285.7 0 257C0 228.3 0 199.7 0 171.2C0 142.7 0 114.3 0 85.8C0 57.3 0 28.7 0 14.3L0 0Z"/>
+                        <path class="onda" d="M214 0L203.2 14.3C192.3 28.7 170.7 57.3 165.2 85.8C159.7 114.3 170.3 142.7 173.7 171.2C177 199.7 173 228.3 179.3 257C185.7 285.7 202.3 314.3 197.7 343C193 371.7 167 400.3 155.5 428.8C144 457.3 147 485.7 155.5 514.2C164 542.7 178 571.3 185 585.7L192 600L0 600L0 585.7C0 571.3 0 542.7 0 514.2C0 485.7 0 457.3 0 428.8C0 400.3 0 371.7 0 343C0 314.3 0 285.7 0 257C0 228.3 0 199.7 0 171.2C0 142.7 0 114.3 0 85.8C0 57.3 0 28.7 0 14.3L0 0Z"/>
+                        <path class="onda" d="M144 0L137.2 14.3C130.3 28.7 116.7 57.3 115.2 85.8C113.7 114.3 124.3 142.7 137 171.2C149.7 199.7 164.3 228.3 164.8 257C165.3 285.7 151.7 314.3 143.5 343C135.3 371.7 132.7 400.3 126.7 428.8C120.7 457.3 111.3 485.7 104.8 514.2C98.3 542.7 94.7 571.3 92.8 585.7L91 600L0 600L0 585.7C0 571.3 0 542.7 0 514.2C0 485.7 0 457.3 0 428.8C0 400.3 0 371.7 0 343C0 314.3 0 285.7 0 257C0 228.3 0 199.7 0 171.2C0 142.7 0 114.3 0 85.8C0 57.3 0 28.7 0 14.3L0 0Z"/>
+                        <path class="onda" d="M94 0L97 14.3C100 28.7 106 57.3 104.7 85.8C103.3 114.3 94.7 142.7 83.8 171.2C73 199.7 60 228.3 60.3 257C60.7 285.7 74.3 314.3 75.5 343C76.7 371.7 65.3 400.3 64.2 428.8C63 457.3 72 485.7 73.8 514.2C75.7 542.7 70.3 571.3 67.7 585.7L65 600L0 600L0 585.7C0 571.3 0 542.7 0 514.2C0 485.7 0 457.3 0 428.8C0 400.3 0 371.7 0 343C0 314.3 0 285.7 0 257C0 228.3 0 199.7 0 171.2C0 142.7 0 114.3 0 85.8C0 57.3 0 28.7 0 14.3L0 0Z"/>
+                    </symbol>
+                </svg>
+
+                <div class="painel-login">
+                    <svg class="painel-ondas"><use href="#ondas"/></svg>
+                    <div class="painel-texto">
+                        <h2>Sua música, organizada do seu jeito.</h2>
+                        <p>Descubra artistas, monte playlists e acompanhe seus lançamentos favoritos.</p>
+                    </div>
+                </div>
+
+                <div class="painel-registro">
+                    <svg class="painel-ondas"><use href="#ondas"/></svg>
+                    <div class="painel-texto">
+                        <h2>Toda a sua música em um só lugar.</h2>
+                        <p>Descubra artistas, monte playlists e acompanhe seus lançamentos favoritos.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="forms">
+                <div class="form-conteudo">
+                    <a href="../index.html" class="login-marca">
+                        <img src="../Assets/Images/logo.png" alt="" class="login-logo">
+                        <span>MUSIC HUB<b>.</b></span>
+                    </a>
+
                     <div class="form-login">
                         <h1>Bem-vindo de volta</h1>
                         <p class="login-sub">Entre para continuar ouvindo suas playlists e descobertas</p>
@@ -101,28 +132,6 @@
                             Entrar</button>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="form-info">
-
-                <h2 data-quando="login">Sua música, organizada do seu jeito.</h2>
-                <h2 data-quando="registro">Toda a sua música em um só lugar.</h2>
-                <p>Descubra artistas, monte playlists e acompanhe seus lançamentos favoritos</p>
-
-                <div class="login-minis">
-                    <div class="mini">
-                        <div class="mini-capa"></div>
-                        <strong>Lorem</strong>
-                        <span>Lorem ipsum dolor</span>
-                    </div>
-                    <div class="mini">
-                        <div class="mini-capa"></div>
-                        <strong>Lorem</strong>
-                        <span>Lorem ipsum dolor</span>
-                    </div>
-                </div>
-
             </div>
 
         </div>

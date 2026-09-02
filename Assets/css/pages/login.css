@@ -86,9 +86,9 @@
 .form-card {
     position: relative;
     display: grid;
-    width: 100%;
+    width: 75%;
+    min-width: 1000px;
     height: 80vh;
-    max-width: 1200px;
     border: 1px solid var(--borda);
     border-radius: 16px;
     backdrop-filter: blur(40px);
@@ -249,6 +249,11 @@
 }
 
 .form-conteudo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+
     transition:
         transform 500ms cubic-bezier(0.55, 0.08, 0.68, 0.53);
 }
@@ -344,37 +349,37 @@
 
 /* ---------- Ondas ---------- */
 
+/* o SVG cobre o painel inteiro e as ondas nascem na borda esquerda dele */
 .painel-ondas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.85;
-    filter:
-        drop-shadow(0 0 10px rgba(139, 78, 224, 0.55))
-        drop-shadow(0 0 32px rgba(113, 40, 204, 0.45));
+    filter: drop-shadow(0 0 24px rgba(139, 78, 224, 0.5));
 }
 
-/* no login a base da onda fica na borda direita */
+/* no login o painel fica do lado direito, então espelhamos as ondas */
 .painel-login .painel-ondas {
     transform: scaleX(-1);
 }
 
+/* cada onda "respira": estica e encolhe na horizontal, presa na borda esquerda */
 .onda {
-    transform-box: fill-box;
-    transform-origin: 0 0;
+    fill-opacity: 0.3;
+    transform-origin: left;
     animation: pulsar ease-in-out infinite alternate;
 }
 
 @keyframes pulsar {
-    from { transform: scaleX(0.78); }
-    to   { transform: scaleX(1.32); }
+    from { transform: scaleX(0.8); }
+    to   { transform: scaleX(1.25); }
 }
 
-/* da maior e mais escura para a menor e mais clara */
-.onda:nth-child(1) { fill: var(--roxo-escuro);   fill-opacity: 0.35; animation-duration: 2.6s; }
-.onda:nth-child(2) { fill: var(--roxo-primario); fill-opacity: 0.35; animation-duration: 2.1s; animation-delay: -0.7s; }
-.onda:nth-child(3) { fill: var(--roxo-hover);    fill-opacity: 0.35; animation-duration: 1.7s; animation-delay: -1.4s; }
-.onda:nth-child(4) { fill: #A97AE8;              fill-opacity: 0.35; animation-duration: 2.3s; animation-delay: -2.1s; }
-.onda:nth-child(5) { fill: #CDB0F4;              fill-opacity: 0.4;  animation-duration: 1.4s; animation-delay: -2.8s; }
+/* da maior e mais escura para a menor e mais clara.
+   o delay negativo faz cada camada começar num ponto diferente da animação */
+.onda:nth-child(1) { fill: var(--roxo-escuro);   animation-duration: 2.6s; }
+.onda:nth-child(2) { fill: var(--roxo-primario); animation-duration: 2.1s; animation-delay: -0.7s; }
+.onda:nth-child(3) { fill: var(--roxo-hover);    animation-duration: 1.7s; animation-delay: -1.4s; }
+.onda:nth-child(4) { fill: #A97AE8;              animation-duration: 2.3s; animation-delay: -2.1s; }
+.onda:nth-child(5) { fill: #CDB0F4;              animation-duration: 1.4s; animation-delay: -2.8s; }

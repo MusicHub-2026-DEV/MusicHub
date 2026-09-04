@@ -115,20 +115,26 @@
 .btn-primario {
     background-color: var(--roxo-primario);
     color: #FFF;
+
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-primario:hover {
     background-color: var(--roxo-hover);
+    transform: translateY(-3px);
 }
 
 .btn-secundario {
     background-color: var(--superficie-clara);
     color: var(--texto);
     border: 1px solid var(--borda);
+
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-secundario:hover {
     background-color: #333;
+    transform: translateY(-3px);
 }
 
 @media (max-width: 800px) {

@@ -1,0 +1,11 @@
+.conteudo-cabecalho {
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacao {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,12 +1,18 @@
-.header {
+.cabecalho {
     display: flex;
     align-items: center;
     gap: 24px;
     height: 80px;
-    padding: 0 24px;
+    padding: 15px 24px;
 
     background-color: var(--superficie);
     border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho span {
+    height: 50%;
+    width: 2px;
+    background-color: var(--texto-fraco);
 }
 
 .logo {
@@ -22,15 +28,24 @@
     color: var(--texto-suave);
     font-weight: 500;
     font-size: 20px;
-    transition: 
-        color 150ms,
-        text-decoration 150ms;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: transparent;
+
+    transition:
+        text-decoration-color 200ms;
 }
 
 .menu a:hover {
-    color: #FFF;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    text-decoration-color: currentColor;
+}
+
+.menu a.ativo {
+    color: var(--roxo-hover);
+    text-decoration-color: currentColor;
+
+    text-underline-offset: 8px;
 }
 
 .busca {

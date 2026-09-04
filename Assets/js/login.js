@@ -26,7 +26,7 @@ async function trocar(modo) {
 
     pagina.dataset.fundo = modo;
 
-    card.classList.add("trocando"); // painel atual sai pela borda
+    card.classList.add("trocando");
     conteudo.classList.add("saindo");
 
     await esperar(conteudo);
@@ -43,7 +43,7 @@ async function trocar(modo) {
 
     await esperar(forms)
 
-    card.classList.remove("trocando"); // novo painel entra pela borda do outro lado
+    card.classList.remove("trocando");
     conteudo.classList.add('entrando');
     conteudo.classList.remove("saindo")
 

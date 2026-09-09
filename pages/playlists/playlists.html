@@ -46,9 +46,9 @@
             <h1>Suas Playlists</h1>
             <div class="navegacao">
                 <div class="abas">
-                    <button class="btn btn-primario">Playlists</button>
-                    <button class="btn btn-secundario">Favoritos</button>
-                    <button class="btn btn-secundario">Artistas</button>
+                    <button data-aba="playlists" class="btn btn-primario">Playlists</button>
+                    <button data-aba="favoritos" class="btn btn-secundario">Favoritos</button>
+                    <button data-aba="artistas" class="btn btn-secundario">Artistas</button>
                 </div>
                 <div class="filtros">
                     <div class="busca">
@@ -60,15 +60,25 @@
                         </svg>
                         <input type="text" placeholder="Search">
                     </div>
-                    <button class="botao-secundario">Filtrar por</button>
+                    <button class="btn btn-secundario">Filtrar por</button>
                 </div>
 
             </div>
         </section>
-        <section class="conteudo">
+        <section class="conteudo" data-painel="playlists">
+            <h2>Playlists</h2>
+        </section>
 
+        <section class="conteudo conteudo-desativado" data-painel="favoritos">
+            <h2>Favoritos</h2>
+        </section>
+
+        <section class="conteudo conteudo-desativado" data-painel="artistas">
+            <h2>Artistas</h2>
         </section>
     </main>
+
+    <script src="../../Assets/js/playlists.js"></script>
 </body>
 
 </html>

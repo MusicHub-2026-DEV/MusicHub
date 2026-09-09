@@ -5,10 +5,12 @@
 }
 
 .navegacao {
-    width: 100%;
-
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    margin-top: 25px;
 }
 
 .abas {
@@ -16,7 +18,17 @@
     gap: 10px;
 }
 
+.abas .btn {
+    font-size: 0.8em;
+    padding: 10px 20px;
+}
+
 .filtros {
     display: flex;
     gap: 10px;
+    flex: 1;
+}
+
+.conteudo-desativado {
+    display: none;
 }

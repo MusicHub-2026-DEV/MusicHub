@@ -1,6 +1,7 @@
 .conteudo-cabecalho {
     display: flex;
     flex-direction: column;
+    padding: 50px;
 }
 
 .navegacao {
@@ -8,4 +9,14 @@
 
     display: flex;
     justify-content: space-between;
+}
+
+.abas {
+    display: flex;
+    gap: 10px;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
 }

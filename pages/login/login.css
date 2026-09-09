@@ -245,7 +245,7 @@
 
 .forms {
     transition:
-        transform 500ms cubic-bezier(0.68,-0.55,0.27,1.55);
+        transform 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .form-conteudo {
@@ -292,7 +292,6 @@
 .login[data-fundo="registro"] .fundo-animation {
     transform: rotate(180deg);
 }
-/* ---------- Painel (metade vazia do card) ---------- */
 
 .painel {
     position: absolute;
@@ -315,7 +314,6 @@
     transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* cada painel fica escondido fora do card, pela sua borda */
 .painel-login {
     right: 0;
     transform: translateX(100%);
@@ -326,7 +324,6 @@
     transform: translateX(-100%);
 }
 
-/* entra só o painel do modo atual, e só depois que o form-card terminou de trocar de lado */
 .form-card[data-modo="login"]:not(.trocando) .painel-login,
 .form-card[data-modo="registro"]:not(.trocando) .painel-registro {
     transform: translateX(0);
@@ -347,24 +344,19 @@
     color: var(--texto-suave);
 }
 
-/* ---------- Ondas ---------- */
-
-/* o SVG cobre o painel inteiro e as ondas nascem na borda esquerda dele */
 .painel-ondas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 24px rgba(139, 78, 224, 0.5));
+    filter: blur(10px);
 }
 
-/* no login o painel fica do lado direito, então espelhamos as ondas */
 .painel-login .painel-ondas {
     transform: scaleX(-1);
 }
 
-/* cada onda "respira": estica e encolhe na horizontal, presa na borda esquerda */
 .onda {
     fill-opacity: 0.3;
     transform-origin: left;
@@ -372,14 +364,40 @@
 }
 
 @keyframes pulsar {
-    from { transform: scaleX(0.8); }
-    to   { transform: scaleX(1.25); }
+    from {
+        transform: scaleX(0.8);
+    }
+
+    to {
+        transform: scaleX(1.5);
+    }
 }
 
-/* da maior e mais escura para a menor e mais clara.
-   o delay negativo faz cada camada começar num ponto diferente da animação */
-.onda:nth-child(1) { fill: var(--roxo-escuro);   animation-duration: 2.6s; }
-.onda:nth-child(2) { fill: var(--roxo-primario); animation-duration: 2.1s; animation-delay: -0.7s; }
-.onda:nth-child(3) { fill: var(--roxo-hover);    animation-duration: 1.7s; animation-delay: -1.4s; }
-.onda:nth-child(4) { fill: #A97AE8;              animation-duration: 2.3s; animation-delay: -2.1s; }
-.onda:nth-child(5) { fill: #CDB0F4;              animation-duration: 1.4s; animation-delay: -2.8s; }
+.onda:nth-child(1) {
+    fill: var(--roxo-escuro);
+    animation-duration: 2.6s;
+}
+
+.onda:nth-child(2) {
+    fill: var(--roxo-primario);
+    animation-duration: 2.1s;
+    animation-delay: -0.7s;
+}
+
+.onda:nth-child(3) {
+    fill: var(--roxo-hover);
+    animation-duration: 1.7s;
+    animation-delay: -1.4s;
+}
+
+.onda:nth-child(4) {
+    fill: #A97AE8;
+    animation-duration: 2.3s;
+    animation-delay: -2.1s;
+}
+
+.onda:nth-child(5) {
+    fill: #CDB0F4;
+    animation-duration: 1.4s;
+    animation-delay: -2.8s;
+}

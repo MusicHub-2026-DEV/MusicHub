@@ -1,7 +1,10 @@
+section {
+    padding: 50px;
+}
+
 .conteudo-cabecalho {
     display: flex;
     flex-direction: column;
-    padding: 50px;
 }
 
 .navegacao {

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste tocar música</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Assets/css/base.css">
+    <link rel="stylesheet" href="/Assets/css/components.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <a href="/pages/home/home.html">
+            <img src="../../Assets/Images/logo.png" alt="Music Hub" class="logo">
+        </a>
+
+        <nav class="menu">
+            <a href="../../pages/playlists/playlists.html" class="ativo">Playlists</a>
+            <a href="../../pages/descobrir/descobrir.html">Descobrir</a>
+            <a href="../../pages/artistas/artistas.html">Artistas</a>
+        </nav>
+
+        <div class="busca">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-search-icon lucide-search">
+                <path d="m21 21-4.34-4.34" />
+                <circle cx="11" cy="11" r="8" />
+            </svg>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <span></span>
+
+        <a href="../../pages/login/login.html" class="btn-entrar">Entrar</a>
+
+    </header>
+
+
+
+    <div class="container-grid">
+        <div class="musica none" id="template-musica">
+            <img class="musica-capa" src="" alt="Capa da música">
+
+            <div class="musica-info">
+                <span class="musica-nome">Nome da música</span>
+                <span class="musica-tempo">00:00</span>
+            </div>
+
+            <button class="musica-play">
+                ▶
+            </button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

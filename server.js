@@ -252,6 +252,50 @@ app.get("/auth/token", async (req, res) => {
     });
 });
 
+// A busca do Spotify aceita no máximo 10 resultados por requisição,
+// então paginamos com offset até chegar no limite pedido.
+const MAXIMO_POR_PAGINA = 10;
+
+async function buscarFaixas(nomeMusica, limite, token) {
+
+    const faixas = [];
+
+    while (faixas.length < limite) {
+
+        const params = new URLSearchParams({
+            q: nomeMusica,
+            type: "track",
+            limit: Math.min(MAXIMO_POR_PAGINA, limite - faixas.length),
+            offset: faixas.length
+        });
+
+        const response = await fetchSpotify(
+            `https://api.spotify.com/v1/search?${params}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            return { status: response.status, data };
+        }
+
+        const itens = data.tracks.items;
+
+        faixas.push(...itens);
+
+        if (itens.length < MAXIMO_POR_PAGINA) {
+            break;
+        }
+    }
+
+    return { faixas };
+}
+
 app.get("/api/spotify/search", async (req, res) => {
 
     try {
@@ -275,67 +319,39 @@ app.get("/api/spotify/search", async (req, res) => {
             30
         );
 
-        const params = new URLSearchParams({
-            q: nomeMusica,
-            type: "track",
-            limit: limite
-        });
+        const { faixas, status, data } =
+            await buscarFaixas(nomeMusica, limite, token);
 
-        const response = await fetchSpotify(
-            `https://api.spotify.com/v1/search?${params}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }
-        );
+        if (!faixas) {
+            console.error("Erro ao buscar no Spotify:", data);
 
-        const data = await response.json();
-
-        if (!response.ok) {
-
-            console.error(
-                "Erro ao buscar no Spotify:",
-                data
-            );
-
-            return res
-                .status(response.status)
-                .json(data);
+            return res.status(status).json(data);
         }
 
-        const musicas =
-            data.tracks.items.map(item => ({
+        const musicas = faixas.map(item => ({
 
-                id: item.id,
+            id: item.id,
 
-                nome: item.name,
+            nome: item.name,
 
-                artista: item.artists
-                    .map(artista => artista.name)
-                    .join(", "),
+            artista: item.artists
+                .map(artista => artista.name)
+                .join(", "),
 
-                capa:
-                    item.album.images[0]?.url,
+            capa: item.album.images[0]?.url,
 
-                duracao:
-                    item.duration_ms,
+            duracao: item.duration_ms,
 
-                uri:
-                    item.uri,
+            uri: item.uri,
 
-                url:
-                    item.external_urls.spotify
-            }));
+            url: item.external_urls.spotify
+        }));
 
         res.json(musicas);
 
     } catch (erro) {
 
-        console.error(
-            "Erro ao buscar músicas:",
-            erro
-        );
+        console.error("Erro ao buscar músicas:", erro);
 
         res.status(500).json({
             erro: "Erro ao buscar músicas"

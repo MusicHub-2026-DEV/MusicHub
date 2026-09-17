@@ -1,0 +1,201 @@
+.campo-musicas {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px
+}
+
+.busca {
+    margin-left: unset;
+}
+
+.busca button {
+    border: none;
+    background: none;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.container-grid {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.musica {
+    width: 420px;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 10px 15px;
+
+    background-color: var(--superficie);
+    border-radius: 12px;
+}
+
+.musica-capa {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    background-color: var(--superficie-clara);
+}
+
+.musica-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    overflow: hidden;
+}
+
+.musica-nome {
+    font-size: 1em;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: var(--texto);
+}
+
+.musica-artista {
+    font-size: 0.9em;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: var(--texto-fraco)
+}
+
+.musica-tempo {
+    font-size: 13px;
+    color: var(--texto-fraco);
+}
+
+.musica-play {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--superficie-clara);
+    color: var(--texto);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.musica-play:hover {
+    transform: translateY(-3px);
+}
+
+.none {
+    display: none;
+}
+
+.musica-player-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.musica-tempo-atual,
+.musica-duracao {
+    font-size: 12px;
+    color: var(--texto-fraco);
+    min-width: 32px;
+}
+
+.musica-progresso {
+    flex: 1;
+    height: 4px;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 999px;
+    outline: none;
+
+    background: linear-gradient(
+        to right,
+        var(--roxo-primario) var(--progresso, 0%),
+        var(--superficie-clara) var(--progresso, 0%)
+    );
+}
+
+.musica-progresso::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--texto);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.musica-progresso:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+.musica-progresso::-moz-range-track {
+    background: var(--superficie-clara);
+    height: 4px;
+    border-radius: 999px;
+}
+
+.musica-progresso::-moz-range-progress {
+    background: var(--roxo-primario);
+    height: 4px;
+    border-radius: 999px;
+}
+
+.musica-progresso::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--texto);
+    border: none;
+    cursor: pointer;
+}

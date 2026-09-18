@@ -1,0 +1,110 @@
+
+.menu-lateral{
+
+    background-color: var(--superficie-clara);
+    height: 100vh;
+
+    border-radius: 0 30px 30px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 50px;
+
+    justify-content: space-between;
+    font-size: 1.6em;
+
+}
+
+.logo{
+    margin-top: 10%;
+    margin-bottom: 30%;
+    width: 40%;
+}
+.login-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    width: 36px;
+}
+
+.login-marca b {
+    color: var(--roxo-hover);
+}
+
+
+
+.menu-navegacao{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.item-menu{
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: white; /* Cor cinza padrão do seu texto (ajuste se necessário) */
+    transition: all 0.3s ease;
+}
+ 
+.item-menu img {
+    
+    width: 30px;
+    font-size: 1.5em;
+
+}
+
+.item-menu:hover{
+    color: var(--roxo-hover);
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--roxo-hover);
+}
+
+.item-menu img:hover {
+    fill: var(--roxo-hover);
+}
+
+.item-menu .ativo{
+     padding-bottom: 10px;
+    border-bottom: 4px solid var(--roxo-hover);
+}
+
+.pagina-listagem{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.baixo-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+}
+.baixo-menu span{
+    background-color: white;
+    width: 100%;
+    border: 1px solid white;
+}
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Parte de cima site */
+

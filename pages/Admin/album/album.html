@@ -1,61 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusicHub - Criar Album</title>
-    <link rel="stylesheet" href="album.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="/Assets/css/base.css">
+    <link rel="stylesheet" href="/Assets/css/components.css">
+    <link rel="stylesheet" href="/pages/Admin/album/album.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-     <link rel="shortcut icon" href="../../Assets/Images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../Assets/Images/logo.png" type="image/x-icon">
 </head>
 <body>
-     <aside class="menu-lateral">
+ 
+    <aside class="menu-lateral">
         <div class="topo-menu">
-            <img class="logo" src="../../Assets/Images/MUSICHUB.logo.png" alt="Music Hub">
+            <img class="logo" src="/Assets/Images/MUSICHUB.logo.png" alt="Music Hub">
         </div>
-
+ 
         <nav class="menu-navegacao">
-
             <a href="#" class="item-menu">
-              <i class="fa-solid fa-chart-simple"></i>
+                <i class="fa-solid fa-chart-simple"></i>
                 <span>Dashboard</span>
             </a>
-
+ 
             <a href="#" class="item-menu">
-               <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
                 <span>Artistas</span>
             </a>
-
-            <a href="#" class="item-menu">
-             <i class="fa-solid fa-compact-disc"></i>
+ 
+            <a href="#" class="item-menu ativo">
+                <i class="fa-solid fa-compact-disc"></i>
                 <span>Álbums</span>
             </a>
-
+ 
             <a href="#" class="item-menu">
-             <i class="fa-solid fa-list"></i>
+                <i class="fa-solid fa-list"></i>
                 <span>Playlists</span>
             </a>
-
-            <a href="#" class="item-menu ativo">
+ 
+            <a href="#" class="item-menu">
                 <i class="fa-solid fa-users"></i>
                 <span>Usuários</span>
             </a>
-
+ 
             <a href="#" class="item-menu">
-               <i class="fa-solid fa-circle-user"></i>
+                <i class="fa-solid fa-circle-user"></i>
                 <span>Admin</span>
             </a>
-
         </nav>
-
-        <!-- SAIR -->
+ 
         <a href="#" class="botao-sair">
             <i class="fa-solid fa-right-from-bracket"></i>
             <span>Sair</span>
         </a>
     </aside>
-
+ 
+    <main class="conteudo-principal">
+ 
+        <a href="#" class="voltar-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar para Álbuns
+        </a>
+ 
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Adicionar Álbum</h1>
+                <p>Preencha as informações para cadastrar um Álbum</p>
+            </div>
+ 
+            <div class="acoes-cabecalho">
+                <button type="button" class="btn btn-secundario">Cancelar</button>
+                <button type="submit" form="form-album" class="btn btn-primario">Salvar Álbum</button>
+            </div>
+        </div>
+ 
+        <form id="form-album" class="grid-album">
+ 
+            <div class="card">
+                <h3>Informações do Álbum</h3>
+ 
+                <div class="campo">
+                    <label for="titulo">Título do Álbum <span class="obrigatorio">*</span></label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Coloque o título do Álbum" required>
+                </div>
+ 
+                <div class="linha-campos">
+                    <div class="campo">
+                        <label for="artista">Artista <span class="obrigatorio">*</span></label>
+                        <input type="text" id="artista" name="artista" placeholder="Coloque o nome do artista" required>
+                    </div>
+ 
+                    <div class="campo">
+                        <label for="musica">Música <span class="obrigatorio">*</span></label>
+                        <input type="text" id="musica" name="musica" placeholder="Coloque uma musica do álbum" required>
+                    </div>
+                </div>
+ 
+                <div class="linha-campos">
+                    <div class="campo">
+                        <label for="genero">Gênero <span class="obrigatorio">*</span></label>
+                        <input type="text" id="genero" name="genero" placeholder="Coloque o gênero do Álbum" required>
+                    </div>
+ 
+                    <div class="campo">
+                        <label for="duracao">Duração <span class="obrigatorio">*</span></label>
+                        <input type="text" id="duracao" name="duracao" placeholder="Coloque a duração do Álbum" required>
+                    </div>
+                </div>
+ 
+                <div class="linha-campos">
+                    <div class="campo">
+                        <label for="ano">Ano de lançamento <span class="obrigatorio">*</span></label>
+                        <input type="number" id="ano" name="ano" placeholder="Coloque o ano de lançamento" required>
+                    </div>
+ 
+                    <div class="campo">
+                        <label for="faixa">Faixa</label>
+                        <input type="text" id="faixa" name="faixa" placeholder="Coloque a faixa do Álbum">
+                    </div>
+                </div>
+ 
+                <div class="divisor"></div>
+ 
+                <div class="status-album">
+                    <h5>Status do Álbum</h5>
+                    <div class="status-toggle">
+                        Ativo
+                        <span class="status-bolinha"></span>
+                    </div>
+                </div>
+            </div>
+ 
+            <div>
+                <div class="card">
+                    <h3>Arquivos de áudio <span class="obrigatorio">*</span></h3>
+ 
+                    <label for="input-audio" class="area-upload">
+                        <div class="icone-upload">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <p>Arraste e solte os arquivo de áudio</p>
+                        <p class="formatos">ou <span class="clique-selecionar">clique para selecionar</span></p>
+                        <p class="formatos">MP3, WAV ou FLAC (máx. 10000mb)</p>
+                    </label>
+                    <input type="file" id="input-audio" name="audio" accept="audio/*" hidden>
+                </div>
+ 
+                <div class="card">
+                    <h3>Capa do Álbum</h3>
+ 
+                    <div class="capa-album-conteudo">
+                        <div class="capa-preview">
+                            <i class="fa-solid fa-question"></i>
+                        </div>
+ 
+                        <div class="capa-info">
+                            <p>Enviar capa<br>JPG ou PNG, mínimo 640x640 (máx. 50mb)</p>
+                            <label for="input-capa" class="btn btn-secundario btn-pequeno">Alterar capa</label>
+                            <input type="file" id="input-capa" name="capa" accept="image/*" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+        </form>
+ 
+    </main>
+ 
 </body>
 </html>

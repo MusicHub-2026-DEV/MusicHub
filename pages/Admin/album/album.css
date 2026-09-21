@@ -1,0 +1,239 @@
+/* ===== CABEÇALHO DA PÁGINA ===== */
+
+    
+.voltar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+ 
+    color: var(--texto-suave);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+ 
+    transition: color 150ms;
+}
+ 
+.voltar-link:hover {
+    color: var(--texto);
+}
+ 
+.cabecalho-pagina {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+ 
+.cabecalho-pagina h1 {
+    margin-bottom: 8px;
+}
+ 
+.cabecalho-pagina p {
+    color: var(--texto-fraco);
+    font-size: 15px;
+}
+ 
+.acoes-cabecalho {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+ 
+/* ===== GRID DA PÁGINA ===== */
+ 
+.grid-album {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+ 
+@media (max-width: 1100px) {
+    .grid-album {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+.card {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 28px;
+}
+ 
+.card + .card {
+    margin-top: 24px;
+}
+ 
+.card h3 {
+    margin-bottom: 24px;
+}
+ 
+/* ===== FORMULÁRIO ===== */
+ 
+.campo {
+    margin-bottom: 20px;
+}
+ 
+.campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+ 
+.campo label .obrigatorio {
+    color: var(--roxo-hover);
+}
+ 
+.campo input,
+.campo select {
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+ 
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+ 
+    color: var(--texto);
+    font-size: 14px;
+ 
+    transition: border-color 150ms;
+}
+ 
+.campo input:focus-visible,
+.campo select:focus-visible {
+    outline: none;
+    border-color: var(--roxo-primario);
+}
+ 
+.linha-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+ 
+@media (max-width: 560px) {
+    .linha-campos {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+.divisor {
+    height: 1px;
+    background-color: var(--borda);
+    margin: 24px 0;
+}
+ 
+.status-album {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.status-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+ 
+.status-bolinha {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background-color: #3ECF6E;
+}
+ 
+/* ===== UPLOAD DE ÁUDIO ===== */
+ 
+.area-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+ 
+    padding: 40px 24px;
+ 
+    background-color: var(--fundo);
+    border: 1px dashed var(--borda);
+    border-radius: 12px;
+ 
+    cursor: pointer;
+    transition: border-color 150ms, background-color 150ms;
+}
+ 
+.area-upload:hover {
+    border-color: var(--roxo-primario);
+    background-color: rgba(113, 40, 204, 0.06);
+}
+ 
+.area-upload .icone-upload {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    background-color: var(--roxo-primario);
+    border-radius: 999px;
+    color: #FFF;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+ 
+.area-upload p {
+    color: var(--texto);
+    font-size: 15px;
+}
+ 
+.area-upload .clique-selecionar {
+    color: var(--roxo-hover);
+    font-weight: 600;
+}
+ 
+.area-upload .formatos {
+    color: var(--texto-fraco);
+    font-size: 13px;
+}
+ 
+/* ===== CAPA DO ÁLBUM ===== */
+ 
+.capa-album-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+ 
+.capa-preview {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    background-color: var(--roxo-primario);
+    border-radius: 12px;
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 700;
+}
+ 
+.capa-info p {
+    font-size: 13px;
+    color: var(--texto-fraco);
+    margin-bottom: 12px;
+}
+ 
+.btn-pequeno {
+    padding: 8px 16px;
+    font-size: 13px;
+}

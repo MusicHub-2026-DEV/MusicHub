@@ -1,3 +1,6 @@
+
+
+
 .ondas{
     display:flex;
     align-items:center;
@@ -99,28 +102,21 @@
     /* max-width: 900px; */
     height: 60%;
     overflow: hidden;
+    margin-top: 100px;
+    padding:20px;
 }
 
 .slides {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 320px;
+    justify-content: flex-end;
     transition: transform 1s ease-in-out;
    
 }
 
-#slide {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    flex-shrink: 0; /* Não encolhe os slides */
-}
-/* .slides{
-    display:flex;
-    flex-direction: row;
-    
-} */
+
 .slide1{
     background-image:  
       linear-gradient(
@@ -136,13 +132,18 @@ align-items: flex-end;
 justify-content: space-between;
 padding:10px 20px;
 }
-.conteudoS1{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap:10px;
-    
+
+/* 1. Garante que o slide serve de âncora */
+.slide {
+  position: relative;
+}
+
+/* 2. Fixa o conteúdo no canto inferior esquerdo */
+.conteudoS1 {
+  position: absolute;
+  bottom: 25px; /* Ajuste esta distância para subir ou descer */
+  left: 30px;   /* Distância da margem esquerda */
+  z-index: 5;
 }
 
 i{
@@ -157,13 +158,7 @@ i{
     cursor:pointer
 }
 
-.subconteudoS1 > i{
-    color:#646059;
-    background-color: white;
-    border-radius: 60px;
-    border: 1px solid #646059;
-    cursor: pointer;
-}
+
 .slide2{
     background-image:  
       linear-gradient(
@@ -209,4 +204,40 @@ display:flex;
 align-items: flex-end;
 justify-content: space-between;
 padding:10px 20px;
+}
+/* Esconde todos os slides por padrão */
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Mostra apenas o slide ativo */
+.slide.ativo {
+  display: block;
+  opacity: 1;
+}
+.botoes-nav {
+  position: absolute;
+  right: 50px;       /* Distância da borda direita */
+  bottom: 40px;      /* Distância da borda de baixo */
+  display: flex;
+  gap: 12px;         /* Espaço entre a seta esquerda e direita */
+  z-index: 10;       /* Garante que os botões fiquem por cima da imagem */
+}
+
+.botoes-nav i {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.6); /* Cor clara levemente transparente */
+  cursor: pointer;                 /* Mostra a mãozinha ao passar o mouse */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.botoes-nav i:hover {
+  color: #ffffff;                  /* Fica 100% branco */
+  transform: scale(1.1);           /* Dá um leve zoom */
+}
+
+.banner-carrossel {
+  position: relative;
 }

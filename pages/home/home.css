@@ -272,9 +272,22 @@ padding:10px 20px;
 .sub_top5{
     margin-left:-150px;
 }
+.sub_top7{
+    margin-left:-320px;
+}
+.sub_top8{
+    margin-left:-260px;
+}
+.sub_top9{
+    margin-left:-275px;
+}
+.sub_top10{
+    margin-left:-280px;
+}
 
 .top1{
-    display:flex;
+    
+display:flex;
 justify-content: space-between;
 width:550px;
 background-color: #181818;

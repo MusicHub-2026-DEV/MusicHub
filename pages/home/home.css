@@ -241,6 +241,10 @@ padding:10px 20px;
 .banner-carrossel {
   position: relative;
 }
+
+.Top-hits{
+    padding:100px 0;
+}
 .titulo{
     margin-top:100px;
     display: flex;
@@ -314,4 +318,72 @@ border-radius:5px;
     display:flex;
     justify-content: space-around;
     margin-top: 100px;
+}
+.banner2{
+    background-image:  linear-gradient(
+      rgba(0, 0, 0, 0.50),
+      rgba(0, 0, 0, 0.50)
+    ),url(../../Assets/Images/Imgs\ para\ home/banner2.svg);
+    width:1700px;
+    height:600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding:100px;
+    font-size:60px;
+    font-weight: bold;
+}
+.banner2>p{
+    width:700px;
+   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    
+}
+.banner_seg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:260px 0;
+    margin-left:80px;
+}
+
+.txt-lanç{
+    font-size:40px ;
+    font-weight: bold;
+    display: flex;
+    gap:40px;
+    justify-content: center;
+
+}
+.txt-lanç > i{
+    margin-top:10px;
+}
+
+.capa{
+    width:150px;
+    height:150px;
+    background-color:#23342c;
+    border-radius: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nomeT{
+    font-weight: bold;
+}
+
+.lancamentos{
+    display:flex;
+    justify-content: space-around;
+    padding:200px;
+}
+.prox-lancamentos{
+    display:flex;
+    justify-content: space-around;
+    padding:200px;
 }

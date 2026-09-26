@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="adicionar_musica.css">
     <link rel="stylesheet" href="../../../Assets/css/base.css">
     <link rel="stylesheet" href="../../../Assets/css/components.css">
+    <script src="https://kit.fontawesome.com/b2ed7bc9ad.js" crossorigin="anonymous"></script>
     <title>Adicionar Musica</title>
     <link rel="shortcut icon" href="../../../Assets/Images/logo.png" type="image/x-icon">
 </head>
 
 <body class="pagina-listagem">
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input" hidden>
+    <label for="menu-toggle" class="menu-toggle-btn">
+        <img src="../../../Assets/Images/logo.png" alt="" class="menu-fechado-logo">
+    </label>
+
+    <label for="menu-toggle" class="menu-overlay"></label>
     <aside class="menu-lateral">
-            <a href="../../home/home.html" class="login-marca">
-                        <img src="../../../Assets/Images/logo.png" alt="" class="login-logo">
-                        <span>MUSIC HUB<b>.</b></span>
-                    </a>
+        <a href="../../home/home.html" class="login-marca">
+            <img src="../../../Assets/Images/logo.png" alt="" class="login-logo">
+            <span>MUSIC HUB<b>.</b></span>
+        </a>
         <nav class="menu-navegacao">
             <a href="#" class="item-menu">
                 <img src="../../../Assets/Images/Dashboard.svg" alt="">
@@ -42,19 +50,124 @@
         </nav>
         <div class="baixo-menu">
             <span></span>
-            <div class="user">
-                <img src="../../../Assets/Images/user.svg"">
-                <div class="texto-user">
-                    <h5>Administrador</h5>
-                    <p>administrador</p>
+            <details class="menu-usuario">
+                <summary class="user">
+                    <img src="../../../Assets/Images/user.svg" alt="">
+                    <div class="texto-user">
+                        <h5>Administrador</h5>
+                        <p>administrador</p>
+                    </div>
+                </summary>
+
+                <div class="tooltip-user">
+                    <a href="#" class="opcao-tooltip">
+                        <i class="fa-solid fa-gear"></i>
+                        Configurações
+                    </a>
+                    <a href="#" class="opcao-tooltip sair">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Sair
+                    </a>
                 </div>
-            </div>
+            </details>
         </div>
     </aside>
-    <section class="parte-cima">
-        <a href="">
-            
+    <section class="parte-principal">
+        <a href="../../home/home.html" class="voltar">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            Voltar para Musicas
+
         </a>
+
+        <div class="cabecalho-musica">
+            <div class="titulo-musica">
+                <h1>Adicionar musica</h1>
+                <p>Preencha as informações para cadastrar uma musica</p>
+            </div>
+            <div class="botoes">
+                <button type="button" class="btn btn-secundario">Cancelar</button>
+                <button type="button" class="btn  btn-primario">Salvar música</button>
+            </div>
+        </div>
+
+        <form class="formulario_musica">
+
+            <div class="card card-adicionar">
+                <h2>Informações das musicas</h2>
+
+                <div class="campos">
+                    <label for="titulo">Titulo da musica</label>
+                    <input type="text" id="titulo" placeholder="Coloque o titulo da musica">
+                </div>
+                <div class="campos-linha">
+                    <div class="campos">
+                        <label for="artista">Artista *</label>
+                        <input type="text" id="artista" placeholder="Coloque o nome do artista">
+                    </div>
+                    <div class="campos">
+                        <label for="album">Album *</label>
+                        <input type="text" id="album" placeholder="Coloque o nome do album">
+                    </div>
+                </div>
+                <div class="campos-linha">
+                    <div class="campos">
+                        <label for="genero">Genero *</label>
+                        <input type="text" id="genero" placeholder="Coloque o genero da musica">
+                    </div>
+                    <div class="campos">
+                        <label for="duracao">Duração *</label>
+                        <input type="text" id="duracao" placeholder="Coloque a duração da sua musica">
+                    </div>
+                </div>
+                <div class="campos-linha">
+                    <div class="campos">
+                        <label for="lancamento">Ano de lançamento *</label>
+                        <input type="number" id="lancamento" placeholder="Coloque o ano de lançamento" min="1900"
+                            max="2099">
+                    </div>
+                    <div class="campos">
+                        <label for="faixa">Faixa *</label>
+                        <input type="text" id="faixa" placeholder="Coloque a faixa da musica" min="1">
+                    </div>
+                </div>
+                <span class="linha-branca"></span>
+
+                <div class="baixo">
+                    <span>Status da musica</span>
+                    <div class="status-musica">
+                        ativo <span class="bolinha"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lateral">
+                <div class="card card-upload">
+                    <h2>Arquivos de audio *</h2>
+                    <label for="arquivo-audio" class="soltar">
+                        <i class="fa-solid fa-cloud-arrow-up icone-upload"></i>
+                        <p>Arraste ou solte o arquivo de audio</p>
+                        <p class="destaque-audio"> clique para selecionar</p>
+                        <p class="texto-informativo">MP3, WAV ou FLAC (máx. 10mb)</p>
+                        <input type="file" id="arquivo-audio" accept="audio/*" hidden>
+                    </label>
+                </div>
+
+                <div class="card card-capa">
+                    <h2>Capa da musica *</h2>
+                    <div class="conteudo-capa">
+                        <label for="arquivo-capa" class="foto-sem-capa">
+                            ?
+                            <input type="file" id="arquivo-capa" accept="image/*" hidden>
+                        </label>
+                        <div class="texto-capa">
+                            <p class="titulo-capa"> Enviar capa</p>
+                            <span class="texto-informativo">JPG ou PNG, minimo 640x640(max 5mb)</span>
+                            <button type="button" class="btn btn-secundario btn-pequeno">Alterar capa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </section>
 </body>
 

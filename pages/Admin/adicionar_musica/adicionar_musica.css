@@ -1,5 +1,4 @@
-
-.menu-lateral{
+.menu-lateral {
 
     background-color: var(--superficie-clara);
     height: 100vh;
@@ -16,11 +15,12 @@
 
 }
 
-.logo{
+.logo {
     margin-top: 10%;
     margin-bottom: 30%;
     width: 40%;
 }
+
 .login-marca {
     display: flex;
     align-items: center;
@@ -40,13 +40,13 @@
 
 
 
-.menu-navegacao{
+.menu-navegacao {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.item-menu{
+.item-menu {
     display: flex;
     align-items: center;
 
@@ -54,18 +54,19 @@
     text-transform: uppercase;
     font-size: 0.9em;
     font-weight: 700;
-    color: white; /* Cor cinza padrão do seu texto (ajuste se necessário) */
+    color: white;
+    /* Cor cinza padrão do seu texto (ajuste se necessário) */
     transition: all 0.3s ease;
 }
- 
+
 .item-menu img {
-    
+
     width: 30px;
     font-size: 1.5em;
 
 }
 
-.item-menu:hover{
+.item-menu:hover {
     color: var(--roxo-hover);
     padding-bottom: 10px;
     border-bottom: 4px solid var(--roxo-hover);
@@ -75,17 +76,17 @@
     fill: var(--roxo-hover);
 }
 
-.item-menu .ativo{
-     padding-bottom: 10px;
+.item-menu .ativo {
+    padding-bottom: 10px;
     border-bottom: 4px solid var(--roxo-hover);
 }
 
-.pagina-listagem{
+.pagina-listagem {
     display: grid;
     grid-template-columns: auto 1fr;
 }
 
-.baixo-menu{
+.baixo-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,11 +95,13 @@
     gap: 20px;
 
 }
-.baixo-menu span{
+
+.baixo-menu span {
     background-color: white;
     width: 100%;
     border: 1px solid white;
 }
+
 .user {
     display: flex;
     align-items: center;
@@ -108,3 +111,353 @@
 
 /* Parte de cima site */
 
+.parte-principal {
+    padding: 50px 60px;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-fraco);
+    font-size: 0.95em;
+    margin-bottom: 25px;
+    width: max-content;
+}
+
+.voltar i {
+    font-size: 0.9em;
+}
+
+.voltar:hover {
+    color: var(--roxo-hover);
+}
+
+.cabecalho-musica {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.titulo-musica h1 {
+    font-size: 2.4em;
+}
+
+.titulo-musica p {
+    color: var(--texto-fraco);
+    margin-top: 8px;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-pequeno {
+    padding: 8px 18px;
+    font-size: 15px;
+}
+
+.formulario_musica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.card {
+    background-color: var(--superficie-clara);
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.campos label {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.campos input {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.campos input:focus {
+    border-color: var(--roxo-hover);
+}
+
+.campos-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.linha-branca {
+    border-top: 1px solid var(--borda);
+    margin: 10px 0 20px;
+}
+
+.baixo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.status-musica {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-fraco);
+    font-weight: 400;
+}
+
+.bolinha {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.soltar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid var(--borda);
+    border-radius: 15px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.soltar:hover {
+    border-color: var(--roxo-hover);
+}
+
+.icone-upload {
+    font-size: 32px;
+    color: var(--roxo-hover);
+    margin: 10px;
+}
+
+.destaque-audio {
+    color: var(--roxo-hover);
+    font-weight: 700;
+}
+
+.texto-informativo {
+    color: var(--texto-fraco);
+    font-size: 0.85em;
+}
+
+.conteudo-capa {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.foto-sem-capa {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--roxo-primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.titulo-capa {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.texto-capa .btn-pequeno {
+    margin-top: 12px;
+}
+
+.menu-usuario {
+    position: relative;
+    width: 100%;
+}
+
+.menu-usuario summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.menu-usuario summary::-webkit-details-marker {
+    display: none;
+}
+
+.tooltip-user {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    min-width: 200px;
+    z-index: 10;
+
+    background-color: var(--superficie-clara);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.opcao-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    color: var(--texto);
+
+    transition: background-color 0.2s;
+}
+
+.opcao-tooltip:hover {
+    background-color: var(--superficie);
+}
+
+.opcao-tooltip.sair:hover {
+    color: red;
+}
+
+.menu-toggle-btn,
+.menu-overlay {
+    display: none;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 800px) {
+
+    .pagina-listagem {
+        display: block;
+    }
+
+    .menu-toggle-btn {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 30;
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background-color: var(--superficie-clara);
+        border: 1px solid var(--borda);
+    }
+
+    .menu-fechado-logo {
+        width: 28px;
+    }
+
+    .menu-toggle-input:checked~.menu-toggle-btn {
+        display: none;
+    }
+
+    .menu-lateral {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 25;
+        width: 260px;
+        font-size: 1.2em;
+        padding: 30px 24px;
+        border-radius: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu-toggle-input:checked~.menu-lateral {
+        transform: translateX(0);
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .menu-toggle-input:checked~.menu-overlay {
+        display: block;
+    }
+
+    .parte-principal {
+        padding: 90px 20px 40px;
+    }
+
+    .formulario_musica,
+    .campos-linha {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .cabecalho-musica {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .botoes {
+        width: 100%;
+    }
+
+    .botoes .btn {
+        flex: 1;
+    }
+
+    .titulo-musica h1 {
+        font-size: 1.8em;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .conteudo-capa {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

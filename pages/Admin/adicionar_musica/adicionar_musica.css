@@ -11,11 +11,11 @@
     padding: 30px 50px;
 
     justify-content: space-between;
-    font-size: 1.6em;
+    font-size: 1.2em;
 
 }
 
-.logo {
+.logo-menu-lateral {
     margin-top: 10%;
     margin-bottom: 30%;
     width: 40%;
@@ -102,11 +102,53 @@
     border: 1px solid white;
 }
 
-.user {
+.user-admin {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
+
+    width: 100%;
+
+    border: 1.5px solid;
+    border-color: transparent;
+    border-radius: 15px;
+
+    padding: 15px;
+
+    transition: border-color 0.2s ease-in-out;
+}
+
+.user-admin:hover {
+    border-color: var(--texto-suave);
+}
+
+.foto-perfil {
+    width: 60px;
+    height: 60px;
+
+    background-color: var(--roxo-primario);
+
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil img {
+    display: none;
+    border-radius: 100%;
+}
+
+.foto-perfil h4 {
+    display: block;
+    font-size: 1.5em;
+}
+
+.texto-user p{
+    font-size: 14px;
+    color: var(--texto-fraco);
 }
 
 /* Parte de cima site */

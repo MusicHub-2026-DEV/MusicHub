@@ -19,9 +19,14 @@ html {
 
 /****************************************************************************************************************************************/
 
+/* body {
+    background: #341622;
+    background: linear-gradient(180deg, rgba(52, 22, 34, 1) 0%, rgba(88, 21, 31, 1) 50%, rgba(29, 12, 17, 1) 100%);
+} */
+
 .album-text-info {
     margin-top: 40px;
-
+    
     display: flex;
     flex-direction: column;
 

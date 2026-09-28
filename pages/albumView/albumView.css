@@ -1,5 +1,7 @@
 /** Global Settings */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +10,21 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: "Montserrat";
 }
 
 :root {
     --cor-botao-play: #7128cc;
 }
 
-/**_____________________________________________________________________________________________________________________________________*/
+/****************************************************************************************************************************************/
 
 .album-text-info {
     margin-top: 40px;
 
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 }
@@ -30,8 +34,11 @@ html {
 }
 
 #capa-album {
+    border-radius: 5px;
+
     margin-top: 25px;
     margin-bottom: 15px;
+
     width: 300px;
     height: 300px;
 }
@@ -46,6 +53,7 @@ html {
 
 .info-artist-album {
     display: flex;
+
     justify-content: center;
 }
 
@@ -98,28 +106,84 @@ html {
 .btn-principais {
     display: grid;
     grid-auto-flow: column;
+
     justify-content: start;
     align-items: center;
+
     gap: 16px;
 }
 
 .btn {
-  border: none;
-  background-color: none;
-  color: white;
-  font-family: sans-serif;
-  cursor: pointer;
-  box-sizing: border-box;
+    border: none;
+
+    background-color: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
 }
 
 .btn-play {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  padding: 0;
-  background-color: var(--cor-botao-play);
+    background-color: var(--cor-botao-play);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    padding: 0;
+    padding-left: 2px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-play i {
+    font-size: 20px;
 }
 
 .btn-salvar {
-    border: 1px solid #fff;
+    padding: 12px 24px;
+    gap: 8px;
+
+    height: 50px;
+
+    border: 2px solid #6f6f6f;
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-more {
+    height: 50px;
+    width: 60px;
+
+    box-sizing: border-box;
+
+    border: 2px solid #6f6f6f;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-more span {
+    font-weight: bold;
+    font-size: 35px;
+
+    line-height: 0;
+
+    display: inline-block;
+
+    margin-top: -16px;
 }

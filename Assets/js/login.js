@@ -6,6 +6,8 @@ const conteudo = document.querySelector(".form-conteudo")
 const login = document.querySelector(".form-login")
 const registro = document.querySelector(".form-registro")
 
+const telaPequena = window.matchMedia("(max-width: 1050px)")
+
 pagina.dataset.fundo = card.dataset.modo
 
 function esperar(elemento) {
@@ -41,7 +43,9 @@ async function trocar(modo) {
 
     card.dataset.modo = modo;
 
-    await esperar(forms)
+    if (!telaPequena.matches) {
+        await esperar(forms)
+    }
 
     card.classList.remove("trocando");
     conteudo.classList.add('entrando');

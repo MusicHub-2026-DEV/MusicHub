@@ -168,6 +168,7 @@
     height: 18px;
     accent-color: var(--roxo-primario);
     border-radius: 20px;
+    flex-shrink: 0;
 }
 
 .login-opcoes a {
@@ -223,25 +224,6 @@
 .mini span {
     font-size: 0.8em;
     color: var(--texto-fraco);
-}
-
-@media (max-width: 900px) {
-    .form-card {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-
-    .painel {
-        display: none;
-    }
-
-    .forms {
-        padding: 32px 24px;
-    }
-
-    .form-card[data-mode="registro"] .forms {
-        transform: none;
-    }
 }
 
 .forms {
@@ -401,4 +383,82 @@
     fill: #CDB0F4;
     animation-duration: 1.4s;
     animation-delay: -2.8s;
+}
+
+@media (max-width: 1050px) {
+    .form-card {
+        width: 100%;
+        max-width: 480px;
+        min-width: 0;
+        height: auto;
+    }
+
+    .painel {
+        display: none;
+    }
+
+    .forms {
+        width: 100%;
+        padding: 40px 32px;
+    }
+
+    .form-card[data-modo="registro"] .forms {
+        transform: none;
+    }
+
+    .form-conteudo {
+        transition: opacity 250ms ease, transform 250ms ease;
+    }
+
+    .form-conteudo.saindo {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    .form-conteudo.entrando {
+        transition: opacity 350ms ease, transform 350ms ease;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        padding: 16px;
+    }
+
+    .forms {
+        padding: 32px 20px;
+    }
+
+    .forms h1 {
+        font-size: 1.8em;
+    }
+
+    .form-registro .campo-senhas {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .login-opcoes {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .login {
+        padding: 12px;
+    }
+
+    .forms {
+        padding: 28px 18px;
+    }
+
+    .login-marca {
+        margin-bottom: 28px;
+    }
+
+    .login-sub {
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
 }

@@ -19,7 +19,6 @@
     width: 48px;
 }
 
-/* logo e botão Entrar não encolhem quando falta espaço */
 .cabecalho a {
     flex-shrink: 0;
 }
@@ -141,7 +140,6 @@
     transform: translateY(-3px);
 }
 
-/* ===== Header responsivo ===== */
 @media (max-width: 1024px) {
     .menu {
         gap: 20px;
@@ -153,12 +151,10 @@
 }
 
 @media (max-width: 800px) {
-    /* esconde só a busca do header, as outras buscas da página continuam */
     .cabecalho .busca {
         display: none;
     }
 
-    /* sem a busca, a barrinha some e o Entrar vai pra direita */
     .cabecalho span {
         display: none;
     }
@@ -169,7 +165,6 @@
 }
 
 @media (max-width: 500px) {
-    /* o menu desce pra uma segunda linha, embaixo da logo */
     .cabecalho {
         flex-wrap: wrap;
         height: auto;
@@ -178,7 +173,7 @@
     }
 
     .menu {
-        order: 1; /* vai pro final, depois do Entrar */
+        order: 1;
         width: 100%;
         justify-content: space-around;
     }
@@ -245,7 +240,6 @@
     font-size: 0.9em;
     font-weight: 700;
     color: white;
-    /* Cor cinza padrão do seu texto (ajuste se necessário) */
     transition: all 0.3s ease;
 }
 

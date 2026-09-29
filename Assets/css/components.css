@@ -140,15 +140,16 @@
     display: grid;
     justify-content: center;
 
-    grid-template-columns: repeat(6, 1fr);
+    /* cabe quantos cards der na linha, cada um com no mínimo 200px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-    gap: 20 0px
+    gap: 20px;
 }
 
 .card-simples {
     height: fit-content;
-    width: fit-content;
-    
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -163,12 +164,12 @@
 }
 
 .card-simples:hover {
-    background-color: var(--fundo-claro);
+    background-color: var(--superficie);
 }
 
 .card-simples img {
-    width: 210px;
-    height: 210px;
+    width: 100%;
+    aspect-ratio: 1; /* sempre quadrada */
 
     object-fit: cover;
 

@@ -264,3 +264,61 @@ body {
     justify-content: space-between;
     flex-direction: column;
 }
+
+.tooltip-user {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    min-width: 200px;
+    z-index: 10;
+
+    background-color: var(--superficie-clara);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.opcao-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    color: var(--texto);
+
+    transition: background-color 0.2s;
+}
+
+.opcao-tooltip:hover {
+    background-color: var(--superficie);
+}
+
+.opcao-tooltip.sair:hover {
+    color: red;
+}
+
+.menu-toggle-btn,
+.menu-overlay {
+    display: none;
+}
+.menu-usuario {
+    position: relative;
+    width: 100%;
+}
+
+.menu-usuario summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.menu-usuario summary::-webkit-details-marker {
+    display: none;
+}
+

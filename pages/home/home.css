@@ -1,3 +1,9 @@
+body {
+    overflow-x: clip;
+}
+
+
+
 /*-----------Ondas sonoras--------------*/
 .ondas {
     display: flex;
@@ -263,11 +269,11 @@ i {
 /*-------------TOP 10 ------------------------------------*/
 
 .Top-hits {
-    padding: 100px 0;
+    padding: clamp(50px, 8vw, 100px) 0;
 }
 
 .titulo {
-    margin-top: 100px;
+  margin-top: clamp(40px, 8vw, 100px);
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -364,21 +370,18 @@ i {
 .banner2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.50),
             rgba(0, 0, 0, 0.50)), url(../../Assets/Images/Imgs\ para\ home/banner2.svg);
-    width: 1700px;
-    height: 600px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 100px;
-    font-size: 60px;
+     width: min(100%, 1700px);
+    height: clamp(240px, 42vw, 600px);
+    padding: clamp(20px, 6vw, 100px);
+    font-size: clamp(22px, 4.2vw, 60px);
+    background-size: cover;
+    background-position: center;
+    
     font-weight: bold;
 }
 
 .banner2>p {
-    width: 700px;
+   width: min(700px, 100%);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 
 }
@@ -387,8 +390,8 @@ i {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 260px 0;
-    margin-left: 80px;
+     margin: clamp(60px, 12vw, 260px) 0;
+    margin-left: 0;
 }
 
 /*------------ Ultimos Lançamentos ------------------------*/
@@ -431,13 +434,13 @@ i {
 .lancamentos {
     display: flex;
     justify-content: space-around;
-    padding: 200px;
+    padding: clamp(50px, 10vw, 200px) clamp(20px, 5vw, 200px);
 }
 
 .prox-lancamentos {
     display: flex;
     justify-content: space-around;
-    padding: 200px;
+    padding: clamp(50px, 10vw, 200px) clamp(20px, 5vw, 200px);
 }
 
 /*-------------------- Vibes - Banners finais --------------------------------------*/
@@ -449,8 +452,8 @@ i {
     gap: 50px;
     padding: 60px 20px;
     width: 100%;
-    margin-bottom: 200px;
-    ;
+    margin-bottom: clamp(60px, 12vw, 200px);
+    
 }
 
 
@@ -558,3 +561,445 @@ a:hover{
     cursor: pointer;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 1.2);
 }
+.banner-carrossel,
+.vibes,
+.banner2 {
+    box-sizing: border-box;
+}
+
+
+@keyframes ondas-mobile {
+    0%   { height: 15px; }
+    50%  { height: 90px; }
+    100% { height: 30px; }
+}
+
+/*----------------------- Responsividade ------------------*/
+
+/*   ========================================================== */
+@media (max-width: 1280px) {
+ 
+    /* TOP 10: duas listas dividem a largura */
+    .selecao {
+        gap: 24px;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+ 
+    .top5 {
+        flex: 1;
+        min-width: 0;
+    }
+ 
+    .top1 {
+        box-sizing: border-box;
+        width: 100%;
+        align-items: center;
+        gap: 16px;
+    }
+ 
+    .top1 > p {
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+ 
+    .top1 > img {
+        flex-shrink: 0;
+    }
+ 
+    /* texto ocupa o espaço do meio, sem margem negativa */
+    .sub_top1,
+    .sub_top2,
+    .sub_top3,
+    .sub_top4,
+    .sub_top5,
+    .sub_top7,
+    .sub_top8,
+    .sub_top9,
+    .sub_top10 {
+        margin-left: 0;
+        flex: 1;
+        min-width: 0;
+        gap: 4px;
+    }
+ 
+    .top1:hover {
+        transform: translateY(-6px);
+    }
+ 
+    /* Vibes: 4 colunas fluidas */
+    .vibes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 60px 24px;
+    }
+ 
+    .vibe1,
+    .vibe2,
+    .vibe3,
+    .vibe4 {
+        width: 100%;
+        height: clamp(320px, 50vw, 685px);
+    }
+ 
+    .texto-central {
+        font-size: clamp(1.2rem, 2.4vw, 2.2rem);
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+}
+ 
+ 
+/* ==========================================================
+   ATÉ 992px  (tablet)
+   ========================================================== */
+@media (max-width: 992px) {
+ 
+    /* Cabeçalho (palpite: não vi o base.css) */
+    .cabecalho {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+ 
+    .logo {
+        max-height: 48px;
+        width: auto;
+    }
+ 
+    .busca {
+        flex: 1 1 200px;
+        min-width: 0;
+    }
+ 
+    .busca input {
+        flex: 1;
+        min-width: 0;
+    }
+ 
+    /* Ondas */
+    .ondas {
+        height: 140px;
+        padding: 60px 20px;
+    }
+ 
+    .txt-ondas {
+        font-size: clamp(24px, 5vw, 34px);
+        text-align: center;
+        padding: 0 20px;
+    }
+ 
+    /* Carrossel (padding 16px do banner + 20px de respiro) */
+    .banner-carrossel {
+        margin-top: 60px;
+        padding: 16px;
+    }
+ 
+    .slides {
+        height: 280px;
+    }
+ 
+    .conteudoS1 {
+        left: 20px;
+        bottom: 20px;
+    }
+ 
+    .botoes-nav {
+        right: 36px;
+        bottom: 36px;
+        gap: 10px;
+    }
+ 
+    /* TOP 10 empilha: uma lista embaixo da outra */
+    .selecao {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin-top: 50px;
+    }
+ 
+    .top5 {
+        width: 100%;
+        max-width: 600px;
+        flex: none;
+    }
+ 
+    /* Lançamentos */
+    .txt-lanç {
+        font-size: 32px;
+        gap: 20px;
+    }
+ 
+    .lancamentos,
+    .prox-lancamentos {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+ 
+    .album:hover {
+        transform: scale(1.08);
+    }
+ 
+    /* Rodapé: logo em cima, duas colunas embaixo */
+    footer {
+        height: auto;
+        padding-bottom: 30px;
+    }
+ 
+    .colunas {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 40px 24px;
+        padding: 50px 30px;
+    }
+ 
+    .colunas > img {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 220px;
+        height: auto;
+    }
+ 
+    .coluna1,
+    .coluna2 {
+        height: auto;
+        gap: 16px;
+    }
+ 
+    .redes {
+        width: 100%;
+        max-width: 200px;
+        margin-left: 0;
+    }
+ 
+    .txt-rdp {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 28px;
+        padding: 5px 30px;
+        text-align: center;
+    }
+}
+ 
+ 
+/* ==========================================================
+   ATÉ 768px  (celular grande)
+   ========================================================== */
+@media (max-width: 768px) {
+ 
+    i {
+        font-size: 30px;
+    }
+ 
+    /* Ondas: barras mais finas e animação menor */
+    .ondas {
+        height: 120px;
+        gap: 5px;
+        padding: 30px 10px;
+    }
+ 
+    .ondas span {
+        width: 10px;
+        animation-name: ondas-mobile;
+    }
+ 
+    /* Carrossel (padding 12px do banner + 14px de respiro) */
+    .banner-carrossel {
+        margin-top: 40px;
+        padding: 12px;
+    }
+ 
+    .slides {
+        height: 220px;
+    }
+ 
+    .slide1,
+    .slide2,
+    .slide3,
+    .slide4 {
+        border-radius: 14px;
+        padding: 10px 14px;
+    }
+ 
+    .conteudoS1 {
+        left: 14px;
+        bottom: 14px;
+        max-width: 65%;
+    }
+ 
+    .conteudoS1 p {
+        font-size: 14px;
+        margin: 0 0 4px;
+    }
+ 
+    .botoes-nav {
+        right: 26px;
+        bottom: 26px;
+        gap: 8px;
+    }
+ 
+    .botoes-nav i {
+        font-size: 24px;
+    }
+ 
+    /* TOP 10 */
+    .top1 {
+        padding: 14px;
+        gap: 12px;
+    }
+ 
+    .top1 > img {
+        height: 44px;
+    }
+ 
+    .top1 > p {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+ 
+    .top1:hover {
+        transform: none;
+    }
+ 
+    /* Lançamentos: grade 2x2 */
+    .txt-lanç {
+        font-size: 24px;
+        gap: 14px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+ 
+    .lancamentos,
+    .prox-lancamentos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 32px 16px;
+        padding: 50px 20px;
+    }
+ 
+    .capa {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+    }
+ 
+    .album:hover {
+        transform: none;
+    }
+ 
+    /* Vibes: grade 2x2, texto continua no centro */
+    .vibes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 40px 16px;
+    }
+ 
+    .vibe1,
+    .vibe2,
+    .vibe3,
+    .vibe4 {
+        height: 240px;
+    }
+ 
+    .vibes img:hover {
+        transform: none;
+    }
+ 
+    .texto-central {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+ 
+    /* Rodapé */
+    .colunas {
+        padding: 40px 20px;
+        gap: 32px 16px;
+    }
+ 
+    .coluna1,
+    .coluna2 {
+        font-size: 15px;
+    }
+ 
+    .colunas i {
+        font-size: 26px;
+    }
+}
+ 
+ 
+/* ==========================================================
+   ATÉ 480px  (celular pequeno)
+   ========================================================== */
+@media (max-width: 480px) {
+ 
+    i {
+        font-size: 26px;
+    }
+ 
+    .slides {
+        height: 190px;
+    }
+ 
+    .conteudoS1 p {
+        font-size: 12px;
+    }
+ 
+    .botoes-nav i {
+        font-size: 22px;
+    }
+ 
+    .top1 {
+        padding: 10px;
+        gap: 10px;
+        font-size: 14px;
+    }
+ 
+    .top1 > img {
+        height: 40px;
+    }
+ 
+    .txt-lanç {
+        font-size: 20px;
+    }
+ 
+    .capa {
+        width: 100px;
+        height: 100px;
+        font-size: 34px;
+    }
+ 
+    .vibe1,
+    .vibe2,
+    .vibe3,
+    .vibe4 {
+        height: 200px;
+    }
+ 
+    .texto-central {
+        font-size: 0.95rem;
+    }
+ 
+    .coluna1,
+    .coluna2 {
+        font-size: 13px;
+    }
+ 
+    .redes {
+        gap: 8px;
+    }
+ 
+    .colunas i {
+        font-size: 22px;
+    }
+}
+ 
+ 
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .ondas span {
+        animation: none;
+    }
+}
+ 

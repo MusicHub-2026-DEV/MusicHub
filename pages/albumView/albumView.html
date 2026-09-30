@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Hub</title>
+    <title>Flower Boy - Music Hub</title>
 
     <link rel="stylesheet" href="../../Assets/css/base.css">
     <link rel="stylesheet" href="../../Assets/css/components.css">
@@ -16,8 +16,7 @@
 <body>
 
     <header class="cabecalho">
-
-        <a href="home.html">
+        <a href="../home/home.html">
             <img src="../../Assets/Images/logo.png" alt="Music Hub" class="logo">
         </a>
 
@@ -29,8 +28,7 @@
 
         <div class="busca">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-search-icon lucide-search">
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m21 21-4.34-4.34" />
                 <circle cx="11" cy="11" r="8" />
             </svg>
@@ -40,33 +38,247 @@
         <span></span>
 
         <a href="../login/login.html" class="btn-entrar">Entrar</a>
-
     </header>
 
     <main>
-        <div class="album-text-info">
+        <section class="album-topo">
+            <img class="album-fundo" src="../../Assets/Images/flowerBoyAlbumImage.jpg" alt="" aria-hidden="true">
             <h3>Álbum</h3>
-            <img id="capa-album" src="../../Assets/Images/flowerBoyAlbumImage.jpg"
-                alt="Imagem da capa do álbum musical 'Flower Boy' do artista 'Tyler, The Creator'">
+
+            <img class="album-capa" src="../../Assets/Images/flowerBoyAlbumImage.jpg"alt="Capa do álbum Flower Boy, de Tyler, The Creator">
+
             <h1>Flower Boy</h1>
-            <div class="info-artist-album">
-                <img src="#" alt="Imagem do perfil do artista">
-                <p><span>Tyler, The Creator</span>
-            </div>
-            <div class="btn-principais">
-                <button class="btn btn-play">
+
+            <a href="../artistas/artistas.html" class="album-artista">
+                <img src="../../Assets/Images/8cmlll1aom4a1 1.svg" alt="">
+                <span>Tyler, The Creator</span>
+            </a>
+
+            <div class="album-acoes">
+                <button class="btn btn-primario btn-play" aria-label="Tocar álbum">
                     <i class="fa-solid fa-play"></i>
                 </button>
-                <button class="btn btn-salvar">
+                <button class="btn btn-secundario btn-salvar">
                     <i class="fa-regular fa-heart"></i>
                     <span>Salvar</span>
                 </button>
-                <button class="btn btn-more">
-                    <span>...</span>
+                <button class="btn btn-secundario btn-mais" aria-label="Mais opções">
+                    <i class="fa-solid fa-ellipsis"></i>
                 </button>
             </div>
+        </section>
+
+        <div class="container">
+            <!-- Faixas do álbum (mesma tabela da aba Favoritos) -->
+            <div class="tabela-container">
+                <table class="tabela-musicas">
+                    <thead>
+                        <tr>
+                            <th class="col-numero">#</th>
+                            <th>Título</th>
+                            <th class="col-reproducoes">Reproduções</th>
+                            <th class="col-duracao">Duração</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-numero">1</td>
+                            <td>
+                                <div class="faixa">
+                                    <strong>Foreword (feat. Rex Orange County)</strong>
+                                    <span><b class="explicito">E</b> Tyler, The Creator, Rex Orange County</span>
+                                </div>
+                            </td>
+                            <td class="col-reproducoes">138.569.023</td>
+                            <td class="col-duracao">3:14</td>
+                        </tr>
+                        <tr>
+                            <td class="col-numero">2</td>
+                            <td>
+                                <div class="faixa">
+                                    <strong>Where This Flower Blooms (feat. Frank Ocean)</strong>
+                                    <span><b class="explicito">E</b> Tyler, The Creator, Frank Ocean</span>
+                                </div>
+                            </td>
+                            <td class="col-reproducoes">138.569.023</td>
+                            <td class="col-duracao">3:14</td>
+                        </tr>
+                        <tr>
+                            <td class="col-numero">3</td>
+                            <td>
+                                <div class="faixa">
+                                    <strong>Sometimes...</strong>
+                                    <span>Tyler, The Creator</span>
+                                </div>
+                            </td>
+                            <td class="col-reproducoes">138.569.023</td>
+                            <td class="col-duracao">0:36</td>
+                        </tr>
+                        <tr>
+                            <td class="col-numero">4</td>
+                            <td>
+                                <div class="faixa">
+                                    <strong>See You Again (feat. Kali Uchis)</strong>
+                                    <span><b class="explicito">E</b> Tyler, The Creator, Kali Uchis</span>
+                                </div>
+                            </td>
+                            <td class="col-reproducoes">138.569.023</td>
+                            <td class="col-duracao">3:00</td>
+                        </tr>
+                        <!-- Repita uma <tr> para cada faixa do álbum -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Data de lançamento e direitos -->
+            <div class="album-creditos">
+                <p>21 de julho de 2017</p>
+                <p>℗2017 Columbia Records, a Division of Sony Music Entertainment, as exclusive license</p>
+            </div>
+
+            <section class="album-secao">
+                <div class="secao-cabecalho">
+                    <h2>Mais de Tyler, The Creator</h2>
+                    <a href="../artistas/artistas.html" class="ver-tudo">Ver tudo</a>
+                </div>
+
+                <div class="cards-grid">
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/8cmlll1aom4a1 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/flowerBoyAlbumImage.jpg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/8cmlll1aom4a1 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/flowerBoyAlbumImage.jpg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/8cmlll1aom4a1 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/flowerBoyAlbumImage.jpg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="album-secao">
+                <div class="secao-cabecalho">
+                    <h2>Relacionados</h2>
+                    <a href="../descobrir/descobrir.html" class="ver-tudo">Ver tudo</a>
+                </div>
+
+                <div class="cards-grid">
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/🪐 Tame IMPALA - Borderline 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/arctic monkeys 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/The dropout bear 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/download 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/Travis Scott- Jackboys Debuts #1 On Billboard 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                    <article class="card-simples">
+                        <img src="../../Assets/Images/🪐 Tame IMPALA - Borderline 1.svg" alt="">
+                        <div class="textos">
+                            <h3>Lorem</h3>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
     </main>
+
+    <!-- Player (componente do components.css) -->
+    <footer class="player">
+        <div class="player-musica">
+            <img class="player-capa" src="../../Assets/Images/flowerBoyAlbumImage.jpg" alt="">
+            <div class="player-textos">
+                <strong>Droppin' Seeds (feat. Lil' Wayne)</strong>
+                <span>Tyler, The Creator</span>
+            </div>
+        </div>
+
+        <div class="player-centro">
+            <div class="player-controles">
+                <button class="player-btn ativo" aria-label="Aleatório"><i class="fa-solid fa-shuffle"></i></button>
+                <button class="player-btn" aria-label="Anterior"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="player-btn player-pular" aria-label="Voltar 5 segundos">
+                    <i class="fa-solid fa-rotate-left"></i><span>5</span>
+                </button>
+                <button class="player-btn player-play" aria-label="Tocar"><i class="fa-solid fa-play"></i></button>
+                <button class="player-btn player-pular" aria-label="Avançar 5 segundos">
+                    <i class="fa-solid fa-rotate-right"></i><span>5</span>
+                </button>
+                <button class="player-btn" aria-label="Próxima"><i class="fa-solid fa-forward-step"></i></button>
+                <button class="player-btn ativo" aria-label="Repetir"><i class="fa-solid fa-repeat"></i></button>
+            </div>
+
+            <div class="player-progresso">
+                <span>1:24</span>
+                <input class="barra" type="range" min="0" max="221" value="84" style="--progresso: 38%">
+                <span>3:41</span>
+            </div>
+        </div>
+
+        <div class="player-volume">
+            <i class="fa-solid fa-volume-low"></i>
+            <input class="barra barra-volume" type="range" min="0" max="100" value="75" style="--progresso: 75%">
+        </div>
+    </footer>
 
 </body>
 

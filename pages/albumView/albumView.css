@@ -1,194 +1,227 @@
-/** Global Settings */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Deixa espaço para o player fixo não cobrir o fim da página */
+body {
+    padding-bottom: var(--altura-player);
 }
 
-html {
-    scroll-behavior: smooth;
-    font-family: "Montserrat";
-}
+.album-topo {
+    position: relative;
+    isolation: isolate; /* o fundo com z-index negativo fica só dentro desta seção */
+    overflow: hidden;   /* corta o blur que "vaza" para fora */
 
-:root {
-    --cor-botao-play: #7128cc;
-}
-
-/****************************************************************************************************************************************/
-
-/* body {
-    background: #341622;
-    background: linear-gradient(180deg, rgba(52, 22, 34, 1) 0%, rgba(88, 21, 31, 1) 50%, rgba(29, 12, 17, 1) 100%);
-} */
-
-.album-text-info {
-    margin-top: 40px;
-    
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    justify-content: center;
+    text-align: center;
+
+    padding: 40px 24px 120px;
 }
 
-.album-text-info h3 {
-    font-size: 20px;
+.album-fundo {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+
+    filter: blur(80px) saturate(1.4) brightness(0.7);
+    transform: scale(1.4);
 }
 
-#capa-album {
-    border-radius: 5px;
+/* Escurece aos poucos até a cor do fundo, para o topo "derreter" na página */
+.album-topo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 
-    margin-top: 25px;
-    margin-bottom: 15px;
-
-    width: 300px;
-    height: 300px;
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.1) 0%, rgba(15, 15, 15, 0.4) 60%, var(--fundo) 100%);
 }
 
-.album-text-info h1 {
-    margin-bottom: 12px;
+.album-capa {
+    width: 260px;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    margin: 16px 0 20px;
+    border-radius: 4px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
-.info-artist-album img {
-    margin-bottom: 30px;
+.album-topo h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    margin-bottom: 10px;
 }
 
-.info-artist-album {
+.album-artista {
     display: flex;
-
-    justify-content: center;
-}
-
-/* .btn-principais {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
-    margin-bottom: 120px;
-
-    border: 2px solid #0088ff;
-}
-
-.btn-play i {
-    width: 50%;
-}
-
-.btn-play {
-    background-color: var(--cor-botao-play);
-
-    border: 2px solid #fff;
-
-    border-radius: 50%;
-
-    width: 4%;
-    height: 9%;
-
-
-    transform: translateX(0%);
-
-
-}
-
-.btn-salvar {
-    display: flex;
-
-    border: 2px solid #fff;
-
-    width: 30%;
-    height: 30%;
-
-}
-
-.btn-more {
-    display: flex;
-
-    border: 2px solid #fff;
-} */
-
-.btn-principais {
-    display: grid;
-    grid-auto-flow: column;
-
-    justify-content: start;
     align-items: center;
-
-    gap: 16px;
-}
-
-.btn {
-    border: none;
-
-    background-color: none;
-
-    color: white;
-
-    cursor: pointer;
-
-    box-sizing: border-box;
-}
-
-.btn-play {
-    background-color: var(--cor-botao-play);
-
-    width: 50px;
-    height: 50px;
-
-    border-radius: 50%;
-
-    padding: 0;
-    padding-left: 2px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-play i {
-    font-size: 20px;
-}
-
-.btn-salvar {
-    padding: 12px 24px;
     gap: 8px;
 
-    height: 50px;
-
-    border: 2px solid #6f6f6f;
-    border-radius: 15px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.btn-more {
-    height: 50px;
+.album-artista:hover span {
+    text-decoration: underline;
+}
+
+.album-artista img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.album-acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-play {
     width: 60px;
-
-    box-sizing: border-box;
-
-    border: 2px solid #6f6f6f;
-
-    border-radius: 15px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+    height: 60px;
+    padding: 0 0 0 3px;
+    border-radius: 50%;
+    font-size: 22px;
 }
 
-.btn-more span {
-    font-weight: bold;
-    font-size: 35px;
+.album-acoes .btn-secundario {
+    height: 60px;
+    gap: 8px;
+    border-radius: 12px;
+    background-color: var(--fundo);
+}
 
-    line-height: 0;
+.btn-mais {
+    width: 60px;
+    padding: 0;
+    font-size: 20px;
+}
 
-    display: inline-block;
+/* ================= TABELA DE FAIXAS ================= */
+.tabela-container {
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    overflow: hidden; /* corta as linhas nas bordas arredondadas */
+    background-color: var(--fundo);
+}
 
-    margin-top: -16px;
+.tabela-musicas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.col-reproducoes {
+    width: 25%;
+}
+
+.col-duracao {
+    width: 120px;
+    text-align: center;
+}
+
+.faixa strong {
+    display: block;
+    color: var(--texto);
+    font-weight: 500;
+}
+
+.faixa span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85em;
+}
+
+/* selo "E" de conteúdo explícito */
+.explicito {
+    display: inline-grid;
+    place-items: center;
+
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+
+    background-color: var(--texto-fraco);
+    color: var(--fundo);
+    font-size: 9px;
+}
+
+/* ================= CRÉDITOS ================= */
+.album-creditos {
+    margin: 40px 0 50px;
+    font-size: 11px;
+    color: var(--texto-fraco);
+}
+
+/* ================= SEÇÕES DE CARDS ================= */
+.album-secao {
+    margin-bottom: 40px;
+}
+
+.secao-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+}
+
+.secao-cabecalho h2 {
+    font-size: 22px;
+}
+
+.ver-tudo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texto-suave);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.ver-tudo:hover {
+    color: var(--roxo-hover);
+}
+
+/* cards menores que na página de playlists */
+.album-secao .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.album-secao .card-simples {
+    padding: 12px;
+}
+
+.album-secao .card-simples img {
+    border-radius: 12px;
+}
+
+/* ================= TELAS MENORES ================= */
+@media (max-width: 800px) {
+    .col-reproducoes {
+        display: none;
+    }
+
+    .tabela-musicas th,
+    .tabela-musicas td {
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .album-capa {
+        width: 200px;
+    }
+
+    .album-secao .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-duracao {
+        width: 60px;
+    }
 }

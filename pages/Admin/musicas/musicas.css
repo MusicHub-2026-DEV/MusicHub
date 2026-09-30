@@ -1,0 +1,516 @@
+/* ===================================================
+   CABEÇALHO DA PÁGINA
+=================================================== */
+
+body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+}
+
+.cabecalho-pagina {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 15px;
+}
+
+.cabecalho-pagina p {
+    color: var(--texto-fraco);
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+/* ===================================================
+   BARRA DE FERRAMENTAS (busca + filtros)
+=================================================== */
+
+.barra-ferramentas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex: 1;
+    max-width: 480px;
+    height: 48px;
+    padding: 0 18px;
+
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    transition: border-color 150ms;
+}
+
+.campo-busca:focus-within {
+    border-color: var(--roxo-primario);
+}
+
+.campo-busca i {
+    color: var(--texto-fraco);
+    font-size: 15px;
+}
+
+.campo-busca input {
+    width: 100%;
+    height: 100%;
+    color: var(--texto);
+    font-size: 15px;
+}
+
+.campo-busca input:focus-visible {
+    outline: none;
+}
+
+
+
+.btn-filtro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    height: 48px;
+    padding: 0 20px;
+
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: background-color 150ms;
+}
+
+.btn-filtro:hover {
+    background-color: var(--superficie-clara);
+}
+
+.btn-filtro i {
+    font-size: 12px;
+    color: var(--texto-fraco);
+}
+
+/* ===================================================
+   TABELA DE MÚSICAS
+=================================================== */
+
+.card-tabela {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 8px 28px;
+    overflow-x: auto;
+}
+
+.tabela-musicas {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.tabela-musicas th {
+    text-align: left;
+    padding: 20px 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--texto-fraco);
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela-musicas td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--borda);
+    font-size: 15px;
+    color: var(--texto-suave);
+}
+
+.tabela-musicas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-musicas tbody tr {
+    transition: background-color 150ms;
+}
+
+.tabela-musicas tbody tr:hover {
+    background-color: var(--superficie-clara);
+}
+
+/* ----- coluna capa ----- */
+
+.capa-musica {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ----- coluna título ----- */
+
+.tabela-musicas td strong {
+    color: var(--texto);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* cores rotativas das capas */
+.avatar-1 { background-color: #4B3A6E; }
+.avatar-2 { background-color: #6E3A3A; }
+.avatar-3 { background-color: #2F6E4F; }
+.avatar-4 { background-color: #4A4A70; }
+.avatar-5 { background-color: #6E5A2F; }
+.avatar-6 { background-color: #2F4A6E; }
+.avatar-7 { background-color: #5C3A5E; }
+.avatar-8 { background-color: #3E5C4E; }
+
+/* ----- status ----- */
+
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-status.ativa {
+    background-color: var(--roxo-primario);
+    color: #FFF;
+}
+
+.badge-status.revisao {
+    background-color: var(--texto);
+    color: var(--fundo);
+}
+
+.badge-status.inativa {
+    background-color: var(--superficie-clara);
+    color: var(--texto-suave);
+}
+
+/* ----- ações ----- */
+
+.btn-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+
+    color: var(--texto-fraco);
+    font-size: 16px;
+
+    transition: background-color 150ms, color 150ms;
+}
+
+.btn-acoes:hover {
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+/* ===================================================
+   RODAPÉ DA TABELA (paginação)
+=================================================== */
+
+.rodape-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 20px 4px 4px;
+    font-size: 14px;
+    color: var(--texto-fraco);
+}
+
+.paginacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paginacao button,
+.paginacao span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 36px;
+    height: 36px;
+    padding: 0 6px;
+
+    background-color: var(--superficie-clara);
+    border-radius: 8px;
+
+    color: var(--texto-suave);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color 150ms, color 150ms;
+}
+
+.paginacao button:hover {
+    background-color: #333;
+    color: var(--texto);
+}
+
+.paginacao button.ativo {
+    background-color: var(--roxo-primario);
+    color: #FFF;
+}
+
+.paginacao span {
+    background-color: transparent;
+    color: var(--texto-fraco);
+}
+
+@media (max-width: 600px) {
+    .barra-ferramentas {
+        flex-direction: column;
+    }
+
+    .campo-busca {
+        max-width: none;
+    }
+
+    .rodape-tabela {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ===================================================
+   MENU LATERAL
+=================================================== */
+
+.menu-lateral {
+    background-color: var(--superficie-clara);
+    height: 100vh;
+
+    border-radius: 0 30px 30px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 50px;
+
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.logo-menu-lateral {
+    margin-top: 10%;
+    margin-bottom: 30%;
+    width: 40%;
+}
+
+.login-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    width: 36px;
+}
+
+.login-marca b {
+    color: var(--roxo-hover);
+}
+
+.menu-navegacao {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.item-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.item-menu img,
+.item-menu svg {
+    width: 30px;
+    font-size: 1.5em;
+}
+
+.item-menu svg path {
+    fill: currentColor;
+}
+
+.item-menu:hover {
+    color: var(--roxo-hover);
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--roxo-hover);
+}
+
+.item-menu img:hover {
+    fill: var(--roxo-hover);
+}
+
+
+.pagina-listagem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.baixo-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.baixo-menu span {
+    background-color: white;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.user-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: 100%;
+
+    border: 1.5px solid;
+    border-color: transparent;
+    border-radius: 15px;
+
+    padding: 15px;
+
+    transition: border-color 0.2s ease-in-out;
+}
+
+.user-admin:hover {
+    border-color: var(--texto-suave);
+}
+
+.foto-perfil {
+    width: 60px;
+    height: 60px;
+
+    background-color: var(--roxo-primario);
+
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil img {
+    display: none;
+    border-radius: 100%;
+}
+
+.foto-perfil h4 {
+    display: block;
+    font-size: 1.5em;
+}
+
+.texto-user p {
+    font-size: 14px;
+    color: var(--texto-fraco);
+}
+
+.tooltip-user {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    min-width: 200px;
+    z-index: 10;
+
+    background-color: var(--superficie-clara);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.opcao-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    color: var(--texto);
+
+    transition: background-color 0.2s;
+}
+
+.opcao-tooltip:hover {
+    background-color: var(--superficie);
+}
+
+.opcao-tooltip.sair:hover {
+    color: red;
+}
+
+.menu-toggle-btn,
+.menu-overlay {
+    display: none;
+}
+
+.menu-usuario {
+    position: relative;
+    width: 100%;
+}
+
+.menu-usuario summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.menu-usuario summary::-webkit-details-marker {
+    display: none;
+}

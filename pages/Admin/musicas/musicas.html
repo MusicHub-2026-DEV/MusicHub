@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicHub - Criar Album</title>
+    <title>MusicHub - Músicas</title>
     <link rel="stylesheet" href="/Assets/css/base.css">
     <link rel="stylesheet" href="/Assets/css/components.css">
-    <link rel="stylesheet" href="/pages/Admin/album/album.css">
+    <link rel="stylesheet" href="/pages/Admin/musicas/musicas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="shortcut icon" href="../../Assets/Images/logo.png" type="image/x-icon">
 </head>
 <body>
- 
-  <aside class="menu-lateral">
+
+    <aside class="menu-lateral">
         <a href="../../home/home.html" class="login-marca">
             <img src="../../../Assets/Images/logo.png" alt="" class="login-logo">
             <span>MUSIC HUB<b>.</b></span>
@@ -30,10 +30,8 @@
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.0333 8.1637C8.0333 6.36383 8.52079 5.18106 9.23326 4.44825C9.94574 3.71545 11.0932 3.21406 12.8457 3.21406C14.5981 3.21406 15.7456 3.71545 16.4606 4.44825C17.173 5.18106 17.6605 6.36126 17.6605 8.1637C17.6605 9.96615 17.173 11.1489 16.4606 11.8817C15.7481 12.6145 14.5981 13.1159 12.8457 13.1159C11.0957 13.1159 9.94574 12.6145 9.23326 11.8817C8.52079 11.1489 8.0333 9.96872 8.0333 8.1637ZM12.8457 0C10.5207 0 8.47829 0.678809 7.02333 2.17527C5.56837 3.67431 4.90839 5.76987 4.90839 8.16627C4.90839 10.5575 5.56837 12.6557 7.02333 14.1547C8.47829 15.6512 10.5182 16.33 12.8482 16.33C15.1731 16.33 17.213 15.6512 18.6705 14.1547C20.1254 12.6557 20.7854 10.5601 20.7854 8.1637C20.7854 5.77244 20.1254 3.67431 18.6705 2.17527C17.213 0.678809 15.1731 0 12.8457 0ZM12.7532 18.3844C16.3881 18.3844 19.788 19.4232 22.6904 21.2256V23.7712C21.1864 23.9878 19.7902 24.6963 18.708 25.7922C17.388 27.1498 16.8205 28.8365 16.678 30.4281H5.57587C3.22094 30.4281 1.271 29.1271 0.431026 27.3272C-0.0151169 26.4006 -0.119051 25.3389 0.138535 24.3394C0.413527 23.3006 1.08601 22.3853 2.09598 21.6936C5.25067 19.5299 8.96139 18.3782 12.7532 18.3844ZM25.5003 20.5185C25.5003 19.6315 26.2003 18.9115 27.0627 18.9115L27.3877 18.9141C31.4576 18.9784 35 22.5035 35 26.7564C35 27.1826 34.8354 27.5913 34.5424 27.8927C34.2494 28.1941 33.8519 28.3634 33.4375 28.3634C33.0232 28.3634 32.6257 28.1941 32.3327 27.8927C32.0397 27.5913 31.8751 27.1826 31.8751 26.7564C31.8751 24.7688 30.4676 22.9638 28.6277 22.3493V31.1121L28.6302 31.2792C28.6302 32.5725 28.2727 33.8093 27.3852 34.7195C26.5003 35.6323 25.2978 36 24.0428 36C22.7854 36 21.5854 35.6323 20.6979 34.7195C19.8105 33.8093 19.453 32.5725 19.453 31.2792C19.453 29.9884 19.8105 28.7517 20.6979 27.8414C21.5854 26.9286 22.7854 26.561 24.0428 26.561C24.5461 26.5592 25.0328 26.6218 25.5028 26.7487L25.5003 20.5185Z" />
                 </svg>
-
                 <span>Artistas</span>
             </a>
-
             <a href="#" class="item-menu">
                 <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -50,25 +48,28 @@
                 </svg>
                 <span>Playlists</span>
             </a>
-            <a href="#" class="item-menu ativo">
+            <a href="#" class="item-menu">
                 <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M17.5 0C20.6391 0 23.1875 2.51078 23.1875 5.60345C23.1875 8.69612 20.6391 11.2069 17.5 11.2069C14.3609 11.2069 11.8125 8.69612 11.8125 5.60345C11.8125 2.51078 14.3609 0 17.5 0ZM5.25 3.87931C7.42656 3.87931 9.1875 5.61422 9.1875 7.75862C9.1875 9.90302 7.42656 11.6379 5.25 11.6379C3.07344 11.6379 1.3125 9.90302 1.3125 7.75862C1.3125 5.61422 3.07344 3.87931 5.25 3.87931ZM0 21.5517C0 17.7425 3.13359 14.6552 7 14.6552C7.7 14.6552 8.37812 14.7575 9.01797 14.9461C7.21875 16.9289 6.125 19.5474 6.125 22.4138V23.2759C6.125 23.8901 6.25625 24.472 6.49141 25H1.75C0.782031 25 0 24.2295 0 23.2759V21.5517ZM28.5086 25C28.7437 24.472 28.875 23.8901 28.875 23.2759V22.4138C28.875 19.5474 27.7812 16.9289 25.982 14.9461C26.6219 14.7575 27.3 14.6552 28 14.6552C31.8664 14.6552 35 17.7425 35 21.5517V23.2759C35 24.2295 34.218 25 33.25 25H28.5086ZM25.8125 7.75862C25.8125 5.61422 27.5734 3.87931 29.75 3.87931C31.9266 3.87931 33.6875 5.61422 33.6875 7.75862C33.6875 9.90302 31.9266 11.6379 29.75 11.6379C27.5734 11.6379 25.8125 9.90302 25.8125 7.75862ZM8.75 22.4138C8.75 17.6509 12.6656 13.7931 17.5 13.7931C22.3344 13.7931 26.25 17.6509 26.25 22.4138V23.2759C26.25 24.2295 25.468 25 24.5 25H10.5C9.53203 25 8.75 24.2295 8.75 23.2759V22.4138Z" />
+                        d="M17.5 0C20.6391 0 23.1875 2.51078 23.1875 5.60345C23.1875 8.69612 20.6391 11.2069 17.5 11.2069C14.3609 11.2069 11.8125 8.69612 11.8125 5.60345C11.8125 2.51078 14.3609 0 17.5 0ZM5.25 3.87931C7.42656 3.87931 9.1875 5.61422 9.1875 7.75862C9.1875 9.90302 7.42656 11.6379 5.25 11.6379C3.07344 11.6379 1.3125 9.90302 1.3125 7.75862C1.3125 5.61422 3.07344 3.87931 5.25 3.87931ZM0 21.5517C0 17.7425 3.13359 14.6552 7 14.6552C7.7 14.6552 8.37812 14.7575 9.01797 14.9461C7.21875 16.9289 6.125 19.5474 6.125 22.4138V23.2759C6.125 23.8901 6.25625 24.472 6.49141 25H1.75C0.782031 25 0 24.2295 0 23.2759V21.5517ZM28.5086 25C28.7437 24.472 28.875 23.8901 28.875 23.2759V22.4138C28.875 19.5474 27.7812 16.9289 25.982 14.9461C26.6219 14.7575 27.3 14.6552 28 14.6552C31.8664 14.6552 35 17.7425 35 21.5517V23.2759C35 24.2295 34.218 25 33.25 25H28.5086ZM25.8125 7.75862C25.8125 5.61422 27.5734 3.87931 29.75 3.87931C31.9266 3.87931 33.6875 5.61422 33.6875 7.75862C33.6875 9.90302 31.9266 11.6379 29.75 11.6379C27.5734 11.6379 25.8125 9.90302 25.8125 7.75862ZM8.75 22.4138C8.75 17.6509 12.6656 13.7931 17.5 13.7931C22.3344 13.7931 26.25 17.6509 26.25 22.4138V23.2759C26.25 24.2295 25.468 25 24.5 25H10.5C9.53203 25 8.75 24.2295 8.75 23.2759Z" />
                 </svg>
-
                 <span>Usuarios</span>
             </a>
         </nav>
         <div class="baixo-menu">
             <span></span>
             <details class="menu-usuario">
-                  <summary class="user">
-                    <img src="../../../Assets/Images/user.svg" alt="">
+                <summary class="user-admin">
+                    <div class="foto-perfil">
+                        <img src="../../../Assets/Images/flowerBoyAlbumImage.jpg" alt="So_teste">
+                        <h4>A</h4>
+                    </div>
                     <div class="texto-user">
                         <h5>Administrador</h5>
-                        <p>administrador</p>
+                        <p>Administrador</p>
                     </div>
                 </summary>
+
                 <div class="tooltip-user">
                     <a href="#" class="opcao-tooltip">
                         <i class="fa-solid fa-gear"></i>
@@ -82,120 +83,155 @@
             </details>
         </div>
     </aside>
-    
-    <main class="conteudo-principal">
-        <div class="topo">
 
-            <a href="#" class="voltar-link">
-                <i class="fa-solid fa-arrow-left"></i>
-                Voltar para Álbuns
-            </a>
-     
-            <div class="cabecalho-pagina">
-                <div>
-                    <h1>Adicionar Álbum</h1>
-                    <p>Preencha as informações para cadastrar um Álbum</p>
-                </div>
-     
-                <div class="acoes-cabecalho">
-                    <button type="button" class="btn btn-secundario">Cancelar</button>
-                    <button type="submit" form="form-album" class="btn btn-primario">Salvar Álbum</button>
+
+    <main class="conteudo-principal">
+
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Músicas</h1>
+                <p>Gerencie todas as músicas da sua biblioteca.</p>
+            </div>
+
+        </div>
+        
+        <div class="barra-ferramentas">
+            <label class="campo-busca">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Pesquisar músicas">
+            </label>
+            
+            <button type="button" class="btn-filtro">
+                Filtros
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            
+            <button type="button" class="btn btn-primario">
+                + Adicionar música
+            </button>
+        </div>
+
+        <div class="card-tabela">
+            <table class="tabela-musicas">
+                <thead>
+                    <tr>
+                        <th>Capa</th>
+                        <th>Título</th>
+                        <th>Artista</th>
+                        <th>Álbum</th>
+                        <th>Gênero</th>
+                        <th>Duração</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><div class="capa-musica avatar-1">N</div></td>
+                        <td><strong>Noite Adentro</strong></td>
+                        <td>Helena Vaz</td>
+                        <td>Interior</td>
+                        <td>MPB</td>
+                        <td>3:41</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-2">S</div></td>
+                        <td><strong>Sereno</strong></td>
+                        <td>Cais</td>
+                        <td>Pausa Longa</td>
+                        <td>MPB</td>
+                        <td>2:52</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-3">J</div></td>
+                        <td><strong>Janela Aberta</strong></td>
+                        <td>Marta Lins</td>
+                        <td>Segunda Chance</td>
+                        <td>MPB</td>
+                        <td>3:18</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-4">P</div></td>
+                        <td><strong>Ponte Nova</strong></td>
+                        <td>Rio Baixo</td>
+                        <td>Margens</td>
+                        <td>Indie</td>
+                        <td>4:01</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-5">E</div></td>
+                        <td><strong>Estrada de Chão</strong></td>
+                        <td>Vela Norte</td>
+                        <td>Horizonte</td>
+                        <td>Rock</td>
+                        <td>3:44</td>
+                        <td><span class="badge-status revisao">Revisão</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-6">V</div></td>
+                        <td><strong>Voltas</strong></td>
+                        <td>Ponto Cego</td>
+                        <td>Contramão</td>
+                        <td>Eletrônica</td>
+                        <td>3:29</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-7">M</div></td>
+                        <td><strong>Maré Cheia</strong></td>
+                        <td>Duas Marés</td>
+                        <td>Litoral</td>
+                        <td>MPB</td>
+                        <td>3:12</td>
+                        <td><span class="badge-status inativa">Inativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="capa-musica avatar-8">Q</div></td>
+                        <td><strong>Quintal</strong></td>
+                        <td>Helena Vaz</td>
+                        <td>Interior</td>
+                        <td>MPB</td>
+                        <td>3:47</td>
+                        <td><span class="badge-status ativa">Ativa</span></td>
+                        <td><button type="button" class="btn-acoes"><i class="fa-solid fa-ellipsis"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="rodape-tabela">
+                <span>Mostrando 1–8 de 12.458 músicas</span>
+
+                <div class="paginacao">
+                    <button type="button" class="ativo">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                    <span>...</span>
+                    <button type="button">1.234</button>
                 </div>
             </div>
         </div>
- 
-        <form id="form-album" class="grid-album">
- 
-            <div class="card">
-                <h3>Informações do Álbum</h3>
- 
-                <div class="campo">
-                    <label for="titulo">Título do Álbum <span class="obrigatorio">*</span></label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Coloque o título do Álbum" required>
-                </div>
- 
-                <div class="linha-campos">
-                    <div class="campo">
-                        <label for="artista">Artista <span class="obrigatorio">*</span></label>
-                        <input type="text" id="artista" name="artista" placeholder="Coloque o nome do artista" required>
-                    </div>
- 
-                    <div class="campo">
-                        <label for="musica">Música <span class="obrigatorio">*</span></label>
-                        <input type="text" id="musica" name="musica" placeholder="Coloque uma musica do álbum" required>
-                    </div>
-                </div>
- 
-                <div class="linha-campos">
-                    <div class="campo">
-                        <label for="genero">Gênero <span class="obrigatorio">*</span></label>
-                        <input type="text" id="genero" name="genero" placeholder="Coloque o gênero do Álbum" required>
-                    </div>
- 
-                    <div class="campo">
-                        <label for="duracao">Duração <span class="obrigatorio">*</span></label>
-                        <input type="text" id="duracao" name="duracao" placeholder="Coloque a duração do Álbum" required>
-                    </div>
-                </div>
- 
-                <div class="linha-campos">
-                    <div class="campo">
-                        <label for="ano">Ano de lançamento <span class="obrigatorio">*</span></label>
-                        <input type="number" id="ano" name="ano" placeholder="Coloque o ano de lançamento" required>
-                    </div>
- 
-                    <div class="campo">
-                        <label for="faixa">Faixa</label>
-                        <input type="text" id="faixa" name="faixa" placeholder="Coloque a faixa do Álbum">
-                    </div>
-                </div>
- 
-                <div class="divisor"></div>
- 
-                <div class="status-album">
-                    <h5>Status do Álbum</h5>
-                    <div class="status-toggle">
-                        Ativo
-                        <span class="status-bolinha"></span>
-                    </div>
-                </div>
-            </div>
- 
-            <div>
-                <div class="card">
-                    <h3>Arquivos de áudio <span class="obrigatorio">*</span></h3>
- 
-                    <label for="input-audio" class="area-upload">
-                        <div class="icone-upload">
-                            <i class="fa-solid fa-cloud-arrow-up"></i>
-                        </div>
-                        <p>Arraste e solte os arquivo de áudio</p>
-                        <p class="formatos">ou <span class="clique-selecionar">clique para selecionar</span></p>
-                        <p class="formatos">MP3, WAV ou FLAC (máx. 10000mb)</p>
-                    </label>
-                    <input type="file" id="input-audio" name="audio" accept="audio/*" hidden>
-                </div>
- 
-                <div class="card">
-                    <h3>Capa do Álbum</h3>
- 
-                    <div class="capa-album-conteudo">
-                        <div class="capa-preview">
-                            <i class="fa-solid fa-question"></i>
-                        </div>
- 
-                        <div class="capa-info">
-                            <p>Enviar capa<br>JPG ou PNG, mínimo 640x640 (máx. 50mb)</p>
-                            <label for="input-capa" class="btn btn-secundario btn-pequeno">Alterar capa</label>
-                            <input type="file" id="input-capa" name="capa" accept="image/*" hidden>
-                        </div>
-                    </div>
-                </div>
-            </div>
- 
-        </form>
- 
+
     </main>
- 
+
 </body>
 </html>

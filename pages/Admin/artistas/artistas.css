@@ -111,21 +111,31 @@ body {
 
 @media (max-width: 1300px) {
     .grid-artistas {
-        grid-template-columns: repeat(3, 1fr);
+     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    padding-right: 20px;
     }
 }
 
 @media (max-width: 980px) {
     .grid-artistas {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    padding-right: 20px;
     }
 }
 
 @media (max-width: 600px) {
     .grid-artistas {
-        grid-template-columns: 1fr;
+      display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    padding-right: 20px;
     }
 }
+
 
 .card-artista {
     position: relative;
@@ -501,4 +511,139 @@ body {
 
 .menu-usuario summary::-webkit-details-marker {
     display: none;
+}
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+body > *,
+.pagina-listagem > * {
+    min-width: 0;
+}
+
+.menu-lateral {
+    height: 100vh;
+    height: 100dvh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+@media (hover: hover) {
+    .item-menu:hover {
+        color: var(--roxo-hover);
+        padding-bottom: 10px;
+        border-bottom: 4px solid var(--roxo-hover);
+    }
+}
+
+@media (max-width: 900px) {
+
+    body,
+    .pagina-listagem {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .menu-lateral {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+
+        width: min(280px, 85vw);
+        padding: 24px;
+
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.3s ease, visibility 0s 0.3s;
+    }
+
+    .menu-lateral.aberto {
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform 0.3s ease, visibility 0s;
+    }
+
+    body.menu-aberto {
+        overflow: hidden;
+    }
+
+    .menu-navegacao {
+        gap: 28px;
+    }
+
+    .logo-menu-lateral {
+        margin-bottom: 15%;
+    }
+
+    .menu-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 90;
+
+        width: 44px;
+        height: 44px;
+
+        background-color: var(--superficie-clara);
+        border: 1px solid var(--borda);
+        border-radius: 10px;
+        color: var(--texto);
+        font-size: 20px;
+    }
+
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 95;
+
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .menu-overlay.aberto {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .cabecalho-pagina {
+        flex-wrap: wrap;
+        padding: 72px 16px 0;
+        margin-bottom: 24px;
+    }
+
+    .barra-ferramentas,
+    .grid-artistas,
+    .rodape-tabela {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tooltip-user {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn-acoes {
+        width: 44px;
+        height: 44px;
+    }
+
+    .card-artista {
+        padding: 24px 16px;
+    }
+
+    .paginacao {
+        flex-wrap: wrap;
+    }
 }

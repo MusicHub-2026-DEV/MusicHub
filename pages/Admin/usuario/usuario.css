@@ -543,3 +543,9 @@ menu-lateral {
 .menu-usuario summary::-webkit-details-marker {
     display: none;
 }
+
+.item-menu.ativo {
+    color: var(--roxo-hover);
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--roxo-hover);
+}

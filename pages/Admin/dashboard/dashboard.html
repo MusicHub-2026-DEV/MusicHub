@@ -1,32 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="../../../Assets/css/base.css">
+        <link rel="stylesheet" href="../../../Assets/css/components.css">
+        <link rel="stylesheet" href="../adicionar_musica/adicionar_musica.css">
+        <script src="https://kit.fontawesome.com/b2ed7bc9ad.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../../../Assets/Images/logo.png" type="image/x-icon">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="adicionar_musica.css">
-    <link rel="stylesheet" href="../../../Assets/css/base.css">
-    <link rel="stylesheet" href="../../../Assets/css/components.css">
-    <script src="https://kit.fontawesome.com/b2ed7bc9ad.js" crossorigin="anonymous"></script>
-    <title>Adicionar Musica</title>
-    <link rel="shortcut icon" href="../../../Assets/Images/logo.png" type="image/x-icon">
-</head>
-
-<body class="pagina-listagem">
-
+        <title>Dashboard</title>
+    </head>
+    <body class="pagina-listagem">
+        
+    </body>
+    </html>
+    
     <input type="checkbox" id="menu-toggle" class="menu-toggle-input" hidden>
     <label for="menu-toggle" class="menu-toggle-btn">
         <img src="../../../Assets/Images/logo.png" alt="" class="menu-fechado-logo">
     </label>
 
     <label for="menu-toggle" class="menu-overlay"></label>
-    <aside class="menu-lateral">
+
+
+<aside class="menu-lateral">
         <a href="../../home/home.html" class="login-marca">
             <img src="../../../Assets/Images/logo.png" alt="" class="login-logo">
             <span>MUSIC HUB<b>.</b></span>
         </a>
         <nav class="menu-navegacao">
-            <a href="../dashboard/dashboard.html" class="item-menu">
+            <a href="../dashboard/dashboard.html" class="item-menu ativo">
                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7.95455 19.0909H1.59091C0.636364 19.0909 0 19.7273 0 20.6818V33.4091C0 34.3636 0.636364 35 1.59091 35H7.95455C8.90909 35 9.54545 34.3636 9.54545 33.4091V20.6818C9.54545 19.7273 8.90909 19.0909 7.95455 19.0909ZM33.4091 12.7273H27.0455C26.0909 12.7273 25.4545 13.3636 25.4545 14.3182V33.4091C25.4545 34.3636 26.0909 35 27.0455 35H33.4091C34.3636 35 35 34.3636 35 33.4091V14.3182C35 13.3636 34.3636 12.7273 33.4091 12.7273ZM20.6818 0H14.3182C13.3636 0 12.7273 0.636364 12.7273 1.59091V33.4091C12.7273 34.3636 13.3636 35 14.3182 35H20.6818C21.6364 35 22.2727 34.3636 22.2727 33.4091V1.59091C22.2727 0.636364 21.6364 0 20.6818 0Z" />
@@ -58,7 +63,7 @@
                 </svg>
                 <span>Playlists</span>
             </a>
-            <a href="../usuario/usuario.html" class="item-menu ativo">
+            <a href="../usuario/usuario.html" class="item-menu">
                 <svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M17.5 0C20.6391 0 23.1875 2.51078 23.1875 5.60345C23.1875 8.69612 20.6391 11.2069 17.5 11.2069C14.3609 11.2069 11.8125 8.69612 11.8125 5.60345C11.8125 2.51078 14.3609 0 17.5 0ZM5.25 3.87931C7.42656 3.87931 9.1875 5.61422 9.1875 7.75862C9.1875 9.90302 7.42656 11.6379 5.25 11.6379C3.07344 11.6379 1.3125 9.90302 1.3125 7.75862C1.3125 5.61422 3.07344 3.87931 5.25 3.87931ZM0 21.5517C0 17.7425 3.13359 14.6552 7 14.6552C7.7 14.6552 8.37812 14.7575 9.01797 14.9461C7.21875 16.9289 6.125 19.5474 6.125 22.4138V23.2759C6.125 23.8901 6.25625 24.472 6.49141 25H1.75C0.782031 25 0 24.2295 0 23.2759V21.5517ZM28.5086 25C28.7437 24.472 28.875 23.8901 28.875 23.2759V22.4138C28.875 19.5474 27.7812 16.9289 25.982 14.9461C26.6219 14.7575 27.3 14.6552 28 14.6552C31.8664 14.6552 35 17.7425 35 21.5517V23.2759C35 24.2295 34.218 25 33.25 25H28.5086ZM25.8125 7.75862C25.8125 5.61422 27.5734 3.87931 29.75 3.87931C31.9266 3.87931 33.6875 5.61422 33.6875 7.75862C33.6875 9.90302 31.9266 11.6379 29.75 11.6379C27.5734 11.6379 25.8125 9.90302 25.8125 7.75862ZM8.75 22.4138C8.75 17.6509 12.6656 13.7931 17.5 13.7931C22.3344 13.7931 26.25 17.6509 26.25 22.4138V23.2759C26.25 24.2295 25.468 25 24.5 25H10.5C9.53203 25 8.75 24.2295 8.75 23.2759V22.4138Z" />
@@ -67,7 +72,7 @@
                 <span>Usuarios</span>
             </a>
 
-            <a href="#" class="item-menu ativo">
+            <a href="../musicas/musicas.html" class="item-menu">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <path d="M532 71C539.6 77.1 544 86.3 544 96L544 400C544 444.2 501 480 448 480C395 480 352 444.2 352 400C352 355.8 395 320 448 320C459.2 320 470 321.6 480 324.6L480 207.9L256 257.7L256 464C256 508.2 213 544 160 544C107 544 64 508.2 64 464C64 419.8 107 384 160 384C171.2 384 182 385.6 192 388.6L192 160C192 145 202.4 132 217.1 128.8L505.1 64.8C514.6 62.7 524.5 65 532.1 71.1z"/>
             </svg>
@@ -101,103 +106,3 @@
             </details>
         </div>
     </aside>
-    <section class="parte-principal">
-        <a href="../../home/home.html" class="voltar">
-            <i class="fa-solid fa-arrow-left-long"></i>
-            Voltar para Musicas
-
-        </a>
-
-        <div class="cabecalho-musica">
-            <div class="titulo-musica">
-                <h1>Adicionar musica</h1>
-                <p>Preencha as informações para cadastrar uma musica</p>
-            </div>
-            <div class="botoes">
-                <button type="button" class="btn btn-secundario">Cancelar</button>
-                <button type="button" class="btn  btn-primario">Salvar música</button>
-            </div>
-        </div>
-
-        <form class="formulario_musica">
-
-            <div class="card card-adicionar">
-                <h2>Informações das musicas</h2>
-
-                <div class="campos">
-                    <label for="titulo">Titulo da musica</label>
-                    <input type="text" id="titulo" placeholder="Coloque o titulo da musica">
-                </div>
-                <div class="campos-linha">
-                    <div class="campos">
-                        <label for="artista">Artista *</label>
-                        <input type="text" id="artista" placeholder="Coloque o nome do artista">
-                    </div>
-                    <div class="campos">
-                        <label for="album">Album *</label>
-                        <input type="text" id="album" placeholder="Coloque o nome do album">
-                    </div>
-                </div>
-                <div class="campos-linha">
-                    <div class="campos">
-                        <label for="genero">Genero *</label>
-                        <input type="text" id="genero" placeholder="Coloque o genero da musica">
-                    </div>
-                    <div class="campos">
-                        <label for="duracao">Duração *</label>
-                        <input type="text" id="duracao" placeholder="Coloque a duração da sua musica">
-                    </div>
-                </div>
-                <div class="campos-linha">
-                    <div class="campos">
-                        <label for="lancamento">Ano de lançamento *</label>
-                        <input type="number" id="lancamento" placeholder="Coloque o ano de lançamento" min="1900"
-                            max="2099">
-                    </div>
-                    <div class="campos">
-                        <label for="faixa">Faixa *</label>
-                        <input type="text" id="faixa" placeholder="Coloque a faixa da musica" min="1">
-                    </div>
-                </div>
-                <span class="linha-branca"></span>
-
-                <div class="baixo">
-                    <span>Status da musica</span>
-                    <div class="status-musica">
-                        ativo <span class="bolinha"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lateral">
-                <div class="card card-upload">
-                    <h2>Arquivos de audio *</h2>
-                    <label for="arquivo-audio" class="soltar">
-                        <i class="fa-solid fa-cloud-arrow-up icone-upload"></i>
-                        <p>Arraste ou solte o arquivo de audio</p>
-                        <p class="destaque-audio"> clique para selecionar</p>
-                        <p class="texto-informativo">MP3, WAV ou FLAC (máx. 10mb)</p>
-                        <input type="file" id="arquivo-audio" accept="audio/*" hidden>
-                    </label>
-                </div>
-
-                <div class="card card-capa">
-                    <h2>Capa da musica *</h2>
-                    <div class="conteudo-capa">
-                        <label for="arquivo-capa" class="foto-sem-capa">
-                            ?
-                            <input type="file" id="arquivo-capa" accept="image/*" hidden>
-                        </label>
-                        <div class="texto-capa">
-                            <p class="titulo-capa"> Enviar capa</p>
-                            <span class="texto-informativo">JPG ou PNG, minimo 640x640(max 5mb)</span>
-                            <button type="button" class="btn btn-secundario btn-pequeno">Alterar capa</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </section>
-</body>
-
-</html>
